@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Website Resmi Desa Milangasri - Kec. Panekan, Kab. Magetan</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#33450d",
+            "primary-container": "#4a5d23",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#bed58e",
+            "primary-fixed": "#d4eca2",
+            "primary-fixed-dim": "#b8cf88",
+            "secondary": "#904d00",
+            "secondary-container": "#fe932c",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#663500",
+            "secondary-fixed": "#ffdcc3",
+            "tertiary": "#314600",
+            "tertiary-container": "#475e18",
+            "tertiary-fixed": "#d0ed97",
+            "tertiary-fixed-dim": "#b5d17d",
+            "on-tertiary-fixed": "#141f00",
+            "background": "#f8f9ff",
+            "on-background": "#121c2a",
+            "surface": "#f8f9ff",
+            "on-surface": "#121c2a",
+            "surface-variant": "#d9e3f6",
+            "on-surface-variant": "#45483c",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e6eeff",
+            "surface-container-high": "#dee9fc",
+            "surface-container-highest": "#d9e3f6",
+            "outline": "#76786b",
+            "outline-variant": "#c6c8b8"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+            display: ["Plus Jakarta Sans", "sans-serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"],
+            inter: ["Inter", "sans-serif"]
+          },
+          spacing: {
+            "gutter-desktop": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-2xs": "0.25rem",
+            "space-xs": "0.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "space-3xl": "4rem"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body text-on-surface antialiased min-h-screen w-full overflow-x-hidden">
+<!-- NAVBAR / HEADER -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-surface-container-high shadow-[0_2px_10px_rgba(51,69,13,0.06)] transition-all duration-300">
+<div class="h-20 max-w-[1200px] mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
+<!-- Brand Logo & Identity -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-fixed shadow-md shadow-primary/20 transition-transform group-hover:scale-105"><img alt="Logo Desa Milangasri" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjw9PrgpX2pvflULquBr2-QQg6M86d0-tXjnxevbEWcBeK_B0ev0Euax9q_0gKkfTCIeevN6X1lj5fybDVKvxdhihvuQWI4HBRP0MLo8CbnBzFxnDTlnHI-7G9tfoldAeJNNKcdOcxOFcxBVk1rYMIPMneBEIckh1Ma6mGbPJzs08CAt6T7hBP6XhslRkDv4Sl9d2nAT7d8xm-RnYMFBx8fu9aSXHWCgmNkMQQ1w6vREBR7oaVhNcnUu3u5GoigfgyUYQ"/></div>
+<div class="flex flex-col">
+<span class="font-bold text-lg text-primary tracking-tight group-hover:text-primary-container transition-colors">Desa Milangasri</span>
+<span class="text-xs text-on-surface-variant font-medium">Kec. Panekan, Kab. Magetan</span>
+</div>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden lg:flex items-center gap-1.5 p-1.5 bg-surface-container/70 rounded-full backdrop-blur-md border border-surface-container-highest">
+<a class="px-5 py-2 transition-all duration-200 bg-primary text-white font-semibold text-sm rounded-full shadow-sm" href="#profil">
+          Profil Desa
+        </a>
+<a class="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200" href="#berita">
+          Berita
+        </a>
+<!-- Dropdown Potensi Desa -->
+<div class="relative group">
+<button class="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200 flex items-center gap-1 cursor-pointer" type="button">
+<span class="">Potensi Desa</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">arrow_drop_down</span>
+</button>
+<div class="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col min-w-[190px] p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50 transition-all">
+<a class="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2" href="#umkm">
+<span class="material-symbols-outlined text-[18px] text-secondary">storefront</span>
+<span class="">UMKM</span>
+</a>
+<a class="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2" href="#umkm">
+<span class="material-symbols-outlined text-[18px] text-primary">local_florist</span>
+<span class="">Produk Lokal</span>
+</a>
+<a class="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2" href="#geografi">
+<span class="material-symbols-outlined text-[18px] text-tertiary">explore</span>
+<span class="">Geografi</span>
+</a>
+</div>
+</div>
+<a class="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200" href="#kontak">
+          Kontak
+        </a>
+</nav>
+<!-- Action Button / Contact Icon -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-on-primary-container text-sm font-semibold hover:bg-primary hover:text-white transition-all shadow-sm" href="#kontak">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span class="">Layanan Warga</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#geografi" title="Peta Lokasi">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT WRAPPER -->
+<main class="w-full pt-20">
+<!-- 1. HERO SECTION -->
+<section class="relative pt-16 pb-24 w-full overflow-hidden flex flex-col items-center justify-center min-h-[921px] bg-primary text-white" id="profil">
+<!-- Ambient Graphic Elements -->
+<div class="absolute inset-0 z-0 opacity-25 mix-blend-overlay bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida/AEtjO1X6bQHx2ARFT6deE2TRP6qUmYG2gKfQkWmfLDStQIFr9yYgWCGHA4ZwsMJjAjgyrGnTeAJvLmiSjPAwG1IbrPspzKRurvusHvRM0Mk66jOI7dPP_5nK2d3sxZhBvdaNHzBb21-MvE2yFMkkwP1nThUSv7XdiDMPO8wpzqOQnZyvonO9YIRkJ6U5mzYE2b2PdJ5cEnAHJbK4T8pbN7e2u5gJ_daECT12WijLQMAcCRHygnoVStyyqPXK2Z3s");'></div>
+<div class="absolute inset-0 z-0 bg-gradient-to-b from-primary/95 via-primary/85 to-tertiary"></div>
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/15 blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 right-10 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed/15 blur-[120px] pointer-events-none"></div>
+<div class="relative z-10 max-w-[1200px] w-full mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+<!-- Official Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-primary-fixed border border-primary-fixed/30 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">verified</span>
+<span class="">Portal Resmi Pemerintahan Desa</span>
+</div>
+<!-- Main Headline & Subtitle -->
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-4xl drop-shadow-md">
+          DESA MILANGASRI
+        </h1>
+<p class="text-xl md:text-2xl text-primary-fixed font-semibold mt-3 max-w-2xl">
+          Pesona Harmoni di Kaki Gunung Lawu
+        </p>
+<!-- Descriptive Paragraph -->
+<p class="text-base md:text-lg text-white/85 max-w-3xl mt-5 leading-relaxed font-normal">
+          Menghidupkan kemakmuran agraris di ketinggian 840 mdpl. Diberkahi kesegaran 12 mata air vulkanis abadi, hamparan terasering hijau subur, dan kehangatan gotong royong warga lereng timur Gunung Lawu, Kecamatan Panekan, Magetan.
+        </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+<a class="px-8 py-3.5 rounded-full bg-tertiary-fixed hover:bg-tertiary-fixed-dim text-on-tertiary-fixed font-bold text-base shadow-lg shadow-tertiary/40 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5 active:scale-95" href="#berita">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+<span class="">Jelajahi Desa</span>
+</a>
+<a class="px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white font-semibold text-base border border-white/20 transition-all duration-200 flex items-center gap-2" href="#geografi">
+<span class="material-symbols-outlined text-[22px] text-secondary-fixed">play_circle</span>
+<span class="">Tonton Video Profil</span>
+</a>
+</div>
+<!-- 4 Key Fluid Statistics -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mt-14">
+<div class="flex flex-col items-center justify-center p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-colors">
+<div class="flex items-center gap-2 text-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+<span class="text-2xl md:text-3xl font-extrabold text-white">4.820+</span>
+</div>
+<span class="text-xs md:text-sm text-surface-container-low font-medium mt-1">Warga Harmonis</span>
+</div>
+<div class="flex flex-col items-center justify-center p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-colors">
+<div class="flex items-center gap-2 text-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">holiday_village</span>
+<span class="text-2xl md:text-3xl font-extrabold text-white">8 Dusun</span>
+</div>
+<span class="text-xs md:text-sm text-surface-container-low font-medium mt-1">Rukun Wilayah</span>
+</div>
+<div class="flex flex-col items-center justify-center p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-colors">
+<div class="flex items-center gap-2 text-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">water_drop</span>
+<span class="text-2xl md:text-3xl font-extrabold text-white">12 Mata Air</span>
+</div>
+<span class="text-xs md:text-sm text-surface-container-low font-medium mt-1">Sumber Alami</span>
+</div>
+<div class="flex flex-col items-center justify-center p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm hover:bg-white/15 transition-colors">
+<div class="flex items-center gap-2 text-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">eco</span>
+<span class="text-2xl md:text-3xl font-extrabold text-white">100% Organik</span>
+</div>
+<span class="text-xs md:text-sm text-surface-container-low font-medium mt-1">Lahan Pangan Subur</span>
+</div>
+</div>
+</div>
+<!-- Organic Wave Bottom Transition -->
+<div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+<svg class="relative block w-full h-12 md:h-16 text-surface fill-current" preserveaspectratio="none" viewbox="0 0 1440 120">
+<path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,58.7C1248,75,1344,85,1392,90.7L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+</svg>
+</div>
+</section>
+<!-- 2. BAGIAN BERITA TENTANG MILANGASRI -->
+<section class="w-full bg-surface py-16 md:py-24 relative" id="berita">
+<div class="max-w-[1200px] mx-auto px-4 md:px-6">
+<!-- Header Berita -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">newspaper</span>
+<span class="">Kabar &amp; Informasi Desa</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight">Berita Tentang Milangasri</h2>
+<p class="text-on-surface-variant max-w-xl mt-2 text-base leading-relaxed">
+              Informasi terkini seputar pembangunan desa, kemajuan pemberdayaan warga, agenda gotong royong, serta kegiatan kebudayaan lereng Lawu.
+            </p>
+</div>
+<div>
+<a class="px-5 py-2.5 rounded-full text-sm font-semibold bg-primary text-white shadow-sm hover:bg-primary-container transition-all inline-flex items-center gap-2" href="#">
+<span class="">Arsip Berita Lengkap</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 3 Kartu Berita -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Berita 1 -->
+<article class="group flex flex-col rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 border border-surface-container-high">
+<div class="relative h-60 overflow-hidden bg-slate-100">
+<img alt="Penyaluran Bantuan dan Pelayanan Balai Desa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Wlh5pysWXF8-DgjtuZVe0wk8cAn1GIxjzki0lQ_0J8XRmhHo8CRG75RSKEmFNi9Gzb63Nbs3rkjY1tuP1CrVqryrDDIc6a94Mhi1g7tpF-Xsh-4XxuB4p6xjae-_1xGzfCg8cYf3abv_lUVpq5MtKte_IWodHSllh0ZI-D05LLUcCPD2pm0yta8Fd8RlwXQTJn8T3B40sq_-ZzybXxGhmyn5iMZ4PpmtuMwEkh-agUWor4lpVFHPpprvw-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-xs text-primary font-bold shadow-sm">
+                Pembangunan Desa
+              </div>
+<div class="absolute bottom-3 left-4 text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span class="">12 Okt 2024</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Penyaluran Bantuan &amp; Digitalisasi Pelayanan Desa Berjalan Lancar
+                </h3>
+<p class="text-sm text-on-surface-variant mt-3 leading-relaxed">
+                  Pemerintah Desa Milangasri sukses menggelar musyawarah warga dan implementasi anjungan layanan mandiri digital untuk percepatan birokrasi ramah warga.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container-high flex items-center justify-between text-primary text-sm font-bold">
+<span class="">Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Berita 2 -->
+<article class="group flex flex-col rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 border border-surface-container-high">
+<div class="relative h-60 overflow-hidden bg-slate-100">
+<img alt="Pelatihan Pemasaran Digital bagi Pelaku UMKM Lokal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UHTkL7MA-C1NTcJeTI7x5xnbfcyS8cv7EdhMke2LT5_K3_GCSewSTIrikQdJ7kpdqKeXQB4yBTQlA4dTMPNPqWYcwBEoov84ATsRDwbqDA9mJ26fc7vtSH6wx9QGhwvMjLHDdSXxVvob61v9vCq1RY_4aIlwin8hOqsPjB9rjsnydm3nfGCTKUPicKwXbpPLjW2APQlRfAydT0VJb0cdkKrDtu7hnKSOp5u7S-Yg9qR1bmQOx8KstPNpDL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-xs text-secondary font-bold shadow-sm">
+                Pemberdayaan UMKM
+              </div>
+<div class="absolute bottom-3 left-4 text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span class="">08 Okt 2024</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Pelatihan Pemasaran Digital bagi Pelaku UMKM Hasil Bumi Lokal
+                </h3>
+<p class="text-sm text-on-surface-variant mt-3 leading-relaxed">
+                  BUMDes berkolaborasi dengan kelompok tani wanita (KWT) menghadirkan packaging modern dan kemitraan marketplace untuk produk hasil bumi Lawu.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container-high flex items-center justify-between text-primary text-sm font-bold">
+<span class="">Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Berita 3 -->
+<article class="group flex flex-col rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 border border-surface-container-high">
+<div class="relative h-60 overflow-hidden bg-slate-100">
+<img alt="Semarak Festival Tradisi Bersih Desa Milangasri" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Wi_onYNUesHgguDxePuJom5IxMiYJZZw6UahKhvgHiiIaCcOgABPW-UFyabiiKjO42AdqCpPBRMPbAlSPQnNFkZOmGNTXTMJfn1RlXiaOQiijmkEs0tHIU0pVJxbxmbE3k359XoevkBaFoRaqIUxPFsG6aS1mesGUdQ3HEZxldQTZqqVDSLqTkghMSgzx4Jvqyb4yc8iw5VML7C12VME1sAxGD-7njFvfslBh_tfkYbKJ09MAH5PB2K3EM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-xs text-primary font-bold shadow-sm">
+                Tradisi &amp; Budaya
+              </div>
+<div class="absolute bottom-3 left-4 text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span class="">02 Okt 2024</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Semarak Festival Tradisi Bersih Desa di Sumber Duren Lereng Lawu
+                </h3>
+<p class="text-sm text-on-surface-variant mt-3 leading-relaxed">
+                  Ratusan warga berbusana adat bersatu dalam upacara kirap mata air suci lereng Lawu sebagai wujud syukur panen melimpah dan lestarinya sumber air alami.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container-high flex items-center justify-between text-primary text-sm font-bold">
+<span class="">Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ORGANIC WAVE: Surface to Surface-Container-Low -->
+<div class="w-full overflow-hidden leading-none bg-surface">
+<svg class="relative block w-full h-10 md:h-14 text-surface-container-low fill-current" preserveaspectratio="none" viewbox="0 0 1440 80">
+<path d="M0,48 C240,16 480,80 720,40 C960,0 1200,64 1440,32 L1440,80 L0,80 Z"></path>
+</svg>
+</div>
+<!-- 3. BAGIAN DAFTAR UMKM DESA -->
+<section class="w-full bg-surface-container-low py-16 md:py-24 relative" id="umkm">
+<div class="max-w-[1200px] mx-auto px-4 md:px-6">
+<!-- Header UMKM -->
+<div class="text-center max-w-2xl mx-auto mb-14">
+<div class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span class="">Pemberdayaan Ekonomi Warga</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-extrabold text-on-surface">Daftar UMKM Desa</h2>
+<p class="text-on-surface-variant mt-3 text-base leading-relaxed">
+            Produk olahan pangan organik, hasil tani segar lereng Gunung Lawu, dan kriya tradisional autentik persembahan para pelaku usaha mikro Desa Milangasri.
+          </p>
+</div>
+<!-- Spotlight Banner UMKM -->
+<div class="relative rounded-3xl overflow-hidden mb-12 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 bg-primary text-white shadow-xl">
+<div class="relative z-10 max-w-xl">
+<span class="px-4 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold text-xs uppercase tracking-wider">
+              Hasil Bumi Mandiri Lawu
+            </span>
+<h3 class="text-2xl md:text-3xl font-extrabold text-white mt-3 leading-tight">
+              Sentra UMKM Berdaya Milangasri
+            </h3>
+<p class="text-white/85 mt-3 leading-relaxed text-sm md:text-base">
+              Mulai dari olahan keripik pisang lereng Lawu, emping melinjo renyah, hingga sayuran organik segar dipetik langsung dari kebun pekarangan warga dan didukung penuh oleh BUMDes Milangasri.
+            </p>
+<div class="mt-6 flex items-center gap-3">
+<a class="px-5 py-2.5 rounded-full bg-white text-primary font-bold text-sm hover:bg-surface-container transition-colors shadow-sm inline-flex items-center gap-2" href="#kontak">
+<span class="material-symbols-outlined text-[18px]">phone_in_talk</span>
+<span class="">Hubungi BUMDes</span>
+</a>
+</div>
+</div>
+<div class="relative z-10 w-full md:w-80 h-48 md:h-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
+<img alt="Stan UMKM Produk Hasil Bumi Lokal Desa Milangasri" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UHTkL7MA-C1NTcJeTI7x5xnbfcyS8cv7EdhMke2LT5_K3_GCSewSTIrikQdJ7kpdqKeXQB4yBTQlA4dTMPNPqWYcwBEoov84ATsRDwbqDA9mJ26fc7vtSH6wx9QGhwvMjLHDdSXxVvob61v9vCq1RY_4aIlwin8hOqsPjB9rjsnydm3nfGCTKUPicKwXbpPLjW2APQlRfAydT0VJb0cdkKrDtu7hnKSOp5u7S-Yg9qR1bmQOx8KstPNpDL"/>
+</div>
+</div>
+<!-- Grid 4 Kartu Produk -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Produk 1 -->
+<div class="rounded-3xl bg-white p-5 shadow-sm hover:shadow-xl transition-all flex flex-col group border border-surface-container-high">
+<div class="h-44 w-full rounded-2xl overflow-hidden bg-slate-100 relative mb-4">
+<img alt="Keripik Pisang Tanduk Lawu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UHTkL7MA-C1NTcJeTI7x5xnbfcyS8cv7EdhMke2LT5_K3_GCSewSTIrikQdJ7kpdqKeXQB4yBTQlA4dTMPNPqWYcwBEoov84ATsRDwbqDA9mJ26fc7vtSH6wx9QGhwvMjLHDdSXxVvob61v9vCq1RY_4aIlwin8hOqsPjB9rjsnydm3nfGCTKUPicKwXbpPLjW2APQlRfAydT0VJb0cdkKrDtu7hnKSOp5u7S-Yg9qR1bmQOx8KstPNpDL"/>
+<span class="absolute top-2 right-2 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold shadow-sm">
+                Best Seller
+              </span>
+</div>
+<h4 class="font-bold text-base text-on-surface group-hover:text-primary transition-colors">
+              Keripik Pisang Tanduk
+            </h4>
+<span class="text-xs text-on-surface-variant mt-1">KWT Tani Subur Dusun 3</span>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-extrabold text-secondary text-base">Rp 18.000</span>
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center" title="Beli Produk">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Produk 2 -->
+<div class="rounded-3xl bg-white p-5 shadow-sm hover:shadow-xl transition-all flex flex-col group border border-surface-container-high">
+<div class="h-44 w-full rounded-2xl overflow-hidden bg-slate-100 relative mb-4">
+<img alt="Sayur Organik Lereng Lawu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Wi_onYNUesHgguDxePuJom5IxMiYJZZw6UahKhvgHiiIaCcOgABPW-UFyabiiKjO42AdqCpPBRMPbAlSPQnNFkZOmGNTXTMJfn1RlXiaOQiijmkEs0tHIU0pVJxbxmbE3k359XoevkBaFoRaqIUxPFsG6aS1mesGUdQ3HEZxldQTZqqVDSLqTkghMSgzx4Jvqyb4yc8iw5VML7C12VME1sAxGD-7njFvfslBh_tfkYbKJ09MAH5PB2K3EM"/>
+<span class="absolute top-2 right-2 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold shadow-sm">
+                Panen Segar
+              </span>
+</div>
+<h4 class="font-bold text-base text-on-surface group-hover:text-primary transition-colors">
+              Sayur Organik Lereng Lawu
+            </h4>
+<span class="text-xs text-on-surface-variant mt-1">Gapoktan Tirta Makmur</span>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-extrabold text-secondary text-base">Rp 15.000</span>
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center" title="Beli Produk">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Produk 3 -->
+<div class="rounded-3xl bg-white p-5 shadow-sm hover:shadow-xl transition-all flex flex-col group border border-surface-container-high">
+<div class="h-44 w-full rounded-2xl overflow-hidden bg-slate-100 relative mb-4">
+<img alt="Madu Murni Lereng Lawu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Wlh5pysWXF8-DgjtuZVe0wk8cAn1GIxjzki0lQ_0J8XRmhHo8CRG75RSKEmFNi9Gzb63Nbs3rkjY1tuP1CrVqryrDDIc6a94Mhi1g7tpF-Xsh-4XxuB4p6xjae-_1xGzfCg8cYf3abv_lUVpq5MtKte_IWodHSllh0ZI-D05LLUcCPD2pm0yta8Fd8RlwXQTJn8T3B40sq_-ZzybXxGhmyn5iMZ4PpmtuMwEkh-agUWor4lpVFHPpprvw-"/>
+<span class="absolute top-2 right-2 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold shadow-sm">
+                100% Murni
+              </span>
+</div>
+<h4 class="font-bold text-base text-on-surface group-hover:text-primary transition-colors">
+              Madu Murni Lereng Lawu
+            </h4>
+<span class="text-xs text-on-surface-variant mt-1">Kelompok Sadar Hutan</span>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-extrabold text-secondary text-base">Rp 85.000</span>
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center" title="Beli Produk">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Produk 4 -->
+<div class="rounded-3xl bg-white p-5 shadow-sm hover:shadow-xl transition-all flex flex-col group border border-surface-container-high">
+<div class="h-44 w-full rounded-2xl overflow-hidden bg-slate-100 relative mb-4">
+<img alt="Kerajinan Tangan Warga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UHTkL7MA-C1NTcJeTI7x5xnbfcyS8cv7EdhMke2LT5_K3_GCSewSTIrikQdJ7kpdqKeXQB4yBTQlA4dTMPNPqWYcwBEoov84ATsRDwbqDA9mJ26fc7vtSH6wx9QGhwvMjLHDdSXxVvob61v9vCq1RY_4aIlwin8hOqsPjB9rjsnydm3nfGCTKUPicKwXbpPLjW2APQlRfAydT0VJb0cdkKrDtu7hnKSOp5u7S-Yg9qR1bmQOx8KstPNpDL"/>
+<span class="absolute top-2 right-2 px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary text-[11px] font-bold shadow-sm">
+                Kriya Warga
+              </span>
+</div>
+<h4 class="font-bold text-base text-on-surface group-hover:text-primary transition-colors">
+              Kerajinan Anyaman Bambu
+            </h4>
+<span class="text-xs text-on-surface-variant mt-1">Pondok Kriya Dusun Krajan</span>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-extrabold text-secondary text-base">Rp 45.000</span>
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center" title="Beli Produk">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ORGANIC WAVE: Surface-Container-Low to Surface-Container -->
+<div class="w-full overflow-hidden leading-none bg-surface-container-low">
+<svg class="relative block w-full h-10 md:h-14 text-surface-container fill-current" preserveaspectratio="none" viewbox="0 0 1440 80">
+<path d="M0,16 C320,64 640,-16 960,32 C1200,64 1360,16 1440,24 L1440,80 L0,80 Z"></path>
+</svg>
+</div>
+<!-- 4. BAGIAN GEOGRAFIS & MAP MILANGASRI -->
+<section class="w-full bg-surface-container py-16 md:py-24 relative" id="geografi">
+<div class="max-w-[1200px] mx-auto px-4 md:px-6">
+<!-- Header Map & Suhu/Elevasi -->
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
+<div class="flex flex-col max-w-xl">
+<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">location_on</span>
+<span class="">Peta Wilayah &amp; Titik Penting Desa Milangasri</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-extrabold text-on-surface">Map Milangasri</h2>
+<p class="text-on-surface-variant mt-2 text-base leading-relaxed">
+              Jelajahi batas administratif, persebaran 12 mata air vulkanis, kantor balai desa, serta jalur aksesibilitas mulus dari Magetan menuju kawasan ekowisata lereng Gunung Lawu.
+            </p>
+</div>
+<!-- Badges Suhu & Elevasi -->
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-3 p-4 rounded-2xl bg-white shadow-sm border border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">thermostat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-base text-on-surface">18° - 24°C</span>
+<span class="text-xs text-on-surface-variant font-medium">Suhu Udara Sejuk</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 rounded-2xl bg-white shadow-sm border border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">landscape</span>
+</div>
+<div class="flex flex-col">
+<span class="font-extrabold text-base text-on-surface">840 mdpl</span>
+<span class="text-xs text-on-surface-variant font-medium">Elevasi Lereng</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview Topographic Map Representation -->
+<div class="relative w-full rounded-3xl overflow-hidden shadow-xl bg-white border border-surface-container-highest">
+<div class="w-full h-96 md:h-[450px] bg-cover bg-center relative flex items-end p-6 md:p-8" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3oJq3kBDqky4IT-8JmWsSXiQqRyo_6kHdAh-ncQOzOZMb3oxceeIL8Tv9y7mUocmRa5S1qnmBI1NtGrJbEXU-UQAKalzZH7r8-crYLMxUDKQDT2KAKCh8_laFzhAFVPUdwEAlAbuax0H3P9V4om3tFNXWAv0pO0qHNasOHnuRvY9cv054FZJzswvF43iKhW1ywbkb5kRB0dBGzMJkueIj8qdReI8XQObWa4AbM_hR-swLSpGjAVt2Mw");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20"></div>
+<!-- Pin 1: Ekowisata Mata Air -->
+<div class="absolute top-1/4 left-1/4 flex flex-col items-center group cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white font-semibold text-[11px] mt-1.5 shadow">
+                Ekowisata Mata Air
+              </span>
+</div>
+<!-- Pin 2: Balai Desa -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white font-semibold text-[11px] mt-1.5 shadow">
+                Kantor Balai Desa
+              </span>
+</div>
+<!-- Pin 3: Puncak Gunung Lawu -->
+<div class="absolute top-1/3 right-1/4 flex flex-col items-center group cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">terrain</span>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-white font-semibold text-[11px] mt-1.5 shadow">
+                Puncak Gunung Lawu
+              </span>
+</div>
+<!-- Card Rute Perjalanan -->
+<div class="relative z-10 w-full p-4 md:p-6 rounded-2xl bg-white/95 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4 border border-white/50 shadow-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-bold text-base text-on-surface">Rute Perjalanan Mudah</span>
+<span class="text-sm text-on-surface-variant">Jalan aspal mulus, dapat dilalui kendaraan roda dua, mobil pribadi, maupun minibus wisata.</span>
+</div>
+</div>
+<a class="px-6 py-2.5 rounded-full bg-primary hover:bg-primary-container text-white font-semibold text-sm flex items-center gap-2 shrink-0 shadow-sm transition-colors" href="https://maps.google.com/?q=Milangasri+Panekan+Magetan" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span class="">Buka Petunjuk Arah</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 5. FOOTER RESMI DESA MILANGASRI -->
+<footer class="relative w-full bg-primary text-white mt-12 overflow-hidden" id="kontak">
+<!-- Wave top divider -->
+<div class="w-full overflow-hidden leading-none">
+<svg class="relative block w-full h-10 text-surface-container fill-current" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,0 L0,0 Z"></path>
+</svg>
+</div>
+<div class="max-w-[1200px] mx-auto px-4 md:px-6 pt-10 pb-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Kolom 1: Profil Singkat -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed text-[32px]">nature_people</span>
+<span class="font-bold text-xl text-primary-fixed">Pemerintah Desa Milangasri</span>
+</div>
+<p class="text-sm text-on-primary-container leading-relaxed">
+            Pusat transparansi pemerintahan desa, kelestarian agraris lereng Gunung Lawu, dan pelayanan terpadu masyarakat Milangasri, Kecamatan Panekan, Kabupaten Magetan, Jawa Timur.
+          </p>
+</div>
+<!-- Kolom 2: Layanan & Informasi -->
+<div class="flex flex-col gap-3">
+<span class="font-bold text-base text-primary-fixed">Layanan &amp; Informasi</span>
+<div class="flex flex-col gap-2 text-sm text-on-primary-container">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">schedule</span>
+<span class="">Jam Kantor: Senin - Jumat, 08.00 - 15.00 WIB</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">apartment</span>
+<span class="">Balai Desa: Jl. Raya Panekan - Milangasri Km 2</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">fact_check</span>
+<span class="">Sistem Registrasi Warga &amp; APBDes Terbuka</span>
+</div>
+</div>
+</div>
+<!-- Kolom 3: Kontak Pamong Praja -->
+<div class="flex flex-col gap-3">
+<span class="font-bold text-base text-primary-fixed">Kontak Pamong Praja</span>
+<div class="flex flex-col gap-2 text-sm text-on-primary-container">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">location_on</span>
+<span class="">Kecamatan Panekan, Kabupaten Magetan, Jawa Timur 63352</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">mail</span>
+<span class="">Surel: kontak@milangasri.desa.id</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">call</span>
+<span class="">Telepon Siaga: (0351) 895-021</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright Bar -->
+<div class="mt-12 pt-6 border-t border-primary-container/40 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+<span class="text-on-primary-container">
+          © 2024 Pemerintah Desa Milangasri, Panekan, Magetan. Seluruh hak cipta dilindungi.
+        </span>
+<span class="text-primary-fixed-dim font-medium">
+          Gotong Royong • Makmur Lestari Lereng Lawu
+        </span>
+</div>
+</div>
+</footer>
+</body></html>

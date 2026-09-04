@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Primary ── */
+  --color-primary: #33450d;
+  --color-primary-container: #4a5d23;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #bed58e;
+  --color-primary-fixed: #d4eca2;
+  --color-primary-fixed-dim: #b8cf88;
+  --color-on-primary-fixed: #141f00;
+  --color-on-primary-fixed-variant: #3b4d14;
+
+  /* ── Secondary ── */
+  --color-secondary: #904d00;
+  --color-secondary-container: #fe932c;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #663500;
+  --color-secondary-fixed: #ffdcc3;
+  --color-secondary-fixed-dim: #ffb77d;
+  --color-on-secondary-fixed: #2f1500;
+  --color-on-secondary-fixed-variant: #6e3900;
+
+  /* ── Tertiary ── */
+  --color-tertiary: #314600;
+  --color-tertiary-container: #475e18;
+  --color-tertiary-fixed: #d0ed97;
+  --color-tertiary-fixed-dim: #b5d17d;
+  --color-on-tertiary-fixed: #141f00;
+  --color-on-tertiary-fixed-variant: #384e07;
+
+  /* ── Background & Surface ── */
+  --color-background: #f8f9ff;
+  --color-on-background: #121c2a;
+  --color-surface: #f8f9ff;
+  --color-on-surface: #121c2a;
+  --color-surface-dim: #d0dbed;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-variant: #d9e3f6;
+  --color-on-surface-variant: #45483c;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container: #e6eeff;
+  --color-surface-container-high: #dee9fc;
+  --color-surface-container-highest: #d9e3f6;
+  --color-surface-tint: #52652a;
+
+  /* ── Inverse ── */
+  --color-inverse-surface: #27313f;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-inverse-primary: #b8cf88;
+
+  /* ── Outline ── */
+  --color-outline: #76786b;
+  --color-outline-variant: #c6c8b8;
+
+  /* ── Error ── */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* ── Fonts ── */
+  --font-sans: var(--font-plus-jakarta-sans), var(--font-inter), sans-serif;
+  --font-display: var(--font-plus-jakarta-sans), sans-serif;
+  --font-body: var(--font-plus-jakarta-sans), sans-serif;
+  --font-inter: var(--font-inter-variable), sans-serif;
+
+  /* ── Spacing ── */
+  --spacing-gutter-desktop: 1.5rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-space-2xs: 0.25rem;
+  --spacing-space-xs: 0.5rem;
+  --spacing-space-sm: 0.75rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+  --spacing-space-2xl: 3rem;
+  --spacing-space-3xl: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
