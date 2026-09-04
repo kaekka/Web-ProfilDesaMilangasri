@@ -70,7 +70,7 @@ export default function Footer() {
                     {/* Kolom 3: Kontak Pamong Praja */}
                     <div className="flex flex-col gap-3">
                         <span className="font-bold text-base text-primary-fixed">
-                            Kontak Pamong Praja
+                            Informasi & Kontak
                         </span>
                         <div className="flex flex-col gap-2 text-sm text-on-primary-container">
                             <div className="flex items-start gap-2">

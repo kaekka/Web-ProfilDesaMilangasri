@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 
 const NAV_LINKS = [
@@ -14,6 +15,17 @@ const POTENSI_LINKS = [
     { label: "Produk Lokal", href: "#umkm", icon: "local_florist", color: "text-primary" },
     { label: "Geografi", href: "#geografi", icon: "explore", color: "text-tertiary" },
 ];
+
+function DrawerPortal({ children }: { children: React.ReactNode }) {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+    return createPortal(children, document.body);
+}
 
 export default function MobileMenu() {
     const [open, setOpen] = useState(false);
@@ -40,7 +52,7 @@ export default function MobileMenu() {
         <>
             {/* Hamburger Button — visible below lg */}
             <button
-                className="lg:hidden w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                className="lg:hidden w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 onClick={() => setOpen(true)}
                 aria-label="Buka menu navigasi"
                 type="button"
@@ -48,97 +60,100 @@ export default function MobileMenu() {
                 <MaterialIcon name="menu" className="text-[22px]" />
             </button>
 
-            {/* Backdrop */}
-            {open && (
+            {/* Portal: render backdrop + drawer outside header to avoid backdrop-blur inheritance */}
+            <DrawerPortal>
+                {/* Backdrop */}
                 <div
-                    className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+                    className={`fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                        }`}
                     onClick={close}
                     aria-hidden="true"
                 />
-            )}
 
-            {/* Slide-out Drawer */}
-            <div
-                className={`fixed top-0 right-0 z-[70] h-full w-[300px] max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"
-                    }`}
-            >
-                {/* Drawer Header */}
-                <div className="flex items-center justify-between p-5 border-b border-surface-container-high">
-                    <span className="font-bold text-lg text-primary">Menu</span>
-                    <button
-                        className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-on-surface-variant"
-                        onClick={close}
-                        aria-label="Tutup menu"
-                        type="button"
-                    >
-                        <MaterialIcon name="close" className="text-[20px]" />
-                    </button>
-                </div>
-
-                {/* Nav Links */}
-                <nav className="flex flex-col p-4 gap-1">
-                    {NAV_LINKS.map((link) => (
-                        <a
-                            key={link.href + link.label}
-                            href={link.href}
+                {/* Slide-out Drawer */}
+                <div
+                    className={`fixed top-0 right-0 z-[70] h-full w-[300px] max-w-[85vw] shadow-2xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"
+                        }`}
+                    style={{ backgroundColor: '#ffffff' }}
+                >
+                    {/* Drawer Header */}
+                    <div className="flex items-center justify-between p-5 border-b border-surface-container-high">
+                        <span className="font-bold text-lg text-primary">Menu</span>
+                        <button
+                            className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-on-surface-variant"
                             onClick={close}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
+                            aria-label="Tutup menu"
+                            type="button"
                         >
-                            <MaterialIcon name={link.icon} className="text-[20px] text-on-surface-variant" />
-                            <span>{link.label}</span>
-                        </a>
-                    ))}
-
-                    {/* Potensi Desa Accordion */}
-                    <button
-                        type="button"
-                        onClick={() => setPotensiOpen(!potensiOpen)}
-                        className="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors w-full"
-                    >
-                        <div className="flex items-center gap-3">
-                            <MaterialIcon name="eco" className="text-[20px] text-on-surface-variant" />
-                            <span>Potensi Desa</span>
-                        </div>
-                        <MaterialIcon
-                            name="expand_more"
-                            className={`text-[20px] text-on-surface-variant transition-transform duration-200 ${potensiOpen ? "rotate-180" : ""
-                                }`}
-                        />
-                    </button>
-
-                    {/* Potensi Sub-links */}
-                    <div
-                        className={`overflow-hidden transition-all duration-200 ${potensiOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-                            }`}
-                    >
-                        <div className="pl-4 flex flex-col gap-0.5">
-                            {POTENSI_LINKS.map((link) => (
-                                <a
-                                    key={link.href + link.label}
-                                    href={link.href}
-                                    onClick={close}
-                                    className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
-                                >
-                                    <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
-                                    <span>{link.label}</span>
-                                </a>
-                            ))}
-                        </div>
+                            <MaterialIcon name="close" className="text-[20px]" />
+                        </button>
                     </div>
-                </nav>
 
-                {/* CTA Button */}
-                <div className="px-5 mt-4">
-                    <a
-                        href="#kontak"
-                        onClick={close}
-                        className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-primary-container text-on-primary-container font-semibold text-sm hover:bg-primary hover:text-white transition-all shadow-sm"
-                    >
-                        <MaterialIcon name="support_agent" className="text-[18px]" />
-                        <span>Layanan Warga</span>
-                    </a>
+                    {/* Nav Links */}
+                    <nav className="flex flex-col p-4 gap-1">
+                        {NAV_LINKS.map((link) => (
+                            <a
+                                key={link.href + link.label}
+                                href={link.href}
+                                onClick={close}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
+                            >
+                                <MaterialIcon name={link.icon} className="text-[20px] text-on-surface-variant" />
+                                <span>{link.label}</span>
+                            </a>
+                        ))}
+
+                        {/* Potensi Desa Accordion */}
+                        <button
+                            type="button"
+                            onClick={() => setPotensiOpen(!potensiOpen)}
+                            className="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors w-full"
+                        >
+                            <div className="flex items-center gap-3">
+                                <MaterialIcon name="eco" className="text-[20px] text-on-surface-variant" />
+                                <span>Potensi Desa</span>
+                            </div>
+                            <MaterialIcon
+                                name="expand_more"
+                                className={`text-[20px] text-on-surface-variant transition-transform duration-200 ${potensiOpen ? "rotate-180" : ""
+                                    }`}
+                            />
+                        </button>
+
+                        {/* Potensi Sub-links */}
+                        <div
+                            className={`overflow-hidden transition-all duration-200 ${potensiOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+                                }`}
+                        >
+                            <div className="pl-4 flex flex-col gap-0.5">
+                                {POTENSI_LINKS.map((link) => (
+                                    <a
+                                        key={link.href + link.label}
+                                        href={link.href}
+                                        onClick={close}
+                                        className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
+                                    >
+                                        <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
+                                        <span>{link.label}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* CTA Button */}
+                    <div className="px-5 mt-4">
+                        <a
+                            href="#kontak"
+                            onClick={close}
+                            className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-primary-container text-on-primary-container font-semibold text-sm hover:bg-primary hover:text-white transition-all shadow-sm"
+                        >
+                            <MaterialIcon name="support_agent" className="text-[18px]" />
+                            <span>Layanan Warga</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </DrawerPortal>
         </>
     );
 }

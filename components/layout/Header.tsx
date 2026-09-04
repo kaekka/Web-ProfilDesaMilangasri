@@ -4,7 +4,7 @@ import MobileMenu from "./MobileMenu";
 
 export default function Header() {
     return (
-        <header className="fixed top-0 left-0 right-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-surface-container-high shadow-[0_2px_10px_rgba(51,69,13,0.06)] transition-all duration-300">
+        <header className="fixed top-0 left-0 right-0 w-full z-50 bg-white backdrop-blur-xl border-b border-surface-container-high shadow-[0_2px_10px_rgba(51,69,13,0.06)] transition-all duration-300">
             <div className="h-20 max-w-[1200px] mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
                 {/* Brand Logo & Identity */}
                 <a className="flex items-center gap-3 group" href="#">
@@ -106,7 +106,7 @@ export default function Header() {
                         <span>Layanan Warga</span>
                     </a>
                     <a
-                        className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                        className="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                         href="#geografi"
                         title="Peta Lokasi"
                     >
