@@ -139,12 +139,25 @@ export default function Header() {
                     <a
                         className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
                         href="#profil"
-                        title="KKN UNESA Desa Milangasri"
+                        title="Universitas Negeri Surabaya (UNESA)"
                     >
                         <Image
-                            alt="Logo KKN UNESA Desa Milangasri"
+                            alt="Logo UNESA"
                             className="w-full h-full object-contain"
                             src="/logo-kkn-unesa.png"
+                            width={40}
+                            height={40}
+                        />
+                    </a>
+                    <a
+                        className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
+                        href="#profil"
+                        title="KKN Tematik Desa Milangasri"
+                    >
+                        <Image
+                            alt="Logo KKNT Desa Milangasri"
+                            className="w-full h-full object-contain"
+                            src="/Logo-KKNT.png"
                             width={40}
                             height={40}
                         />

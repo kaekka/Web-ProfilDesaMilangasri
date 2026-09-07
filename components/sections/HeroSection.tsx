@@ -14,20 +14,20 @@ export default function HeroSection() {
       className="relative pt-16 pb-24 w-full overflow-hidden flex flex-col items-center justify-center min-h-[921px] bg-primary text-white"
       id="profil"
     >
-      {/* Background Image — blurred & semi-transparent */}
+      {/* Background Image — jernih & terlihat jelas */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/gunglawumilangasri.jpeg"
           alt="Pemandangan Gunung Lawu dari Desa Milangasri"
           fill
-          className="object-cover blur-sm scale-105 opacity-40"
+          className="object-cover opacity-85"
           priority
-          quality={80}
+          quality={90}
         />
       </div>
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/80 via-primary/70 to-tertiary/90" />
-      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/15 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed/15 blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-primary/35 to-primary/85" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed/10 blur-[120px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-4 md:px-6 flex flex-col items-center text-center">

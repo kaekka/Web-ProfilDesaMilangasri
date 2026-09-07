@@ -196,7 +196,7 @@ export default function MobileMenu() {
 
                     {/* Partner Logos */}
                     <div className="p-4 mt-6 border-t border-surface-container-high flex items-center justify-around bg-surface-container-low/50">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1.5">
                             <div className="w-7 h-7 rounded-full bg-white border border-surface-container-high flex items-center justify-center p-0.5 overflow-hidden">
                                 <Image
                                     alt="Logo Kabupaten Magetan"
@@ -206,20 +206,33 @@ export default function MobileMenu() {
                                     height={28}
                                 />
                             </div>
-                            <span className="text-xs font-semibold text-on-surface-variant">Kab. Magetan</span>
+                            <span className="text-[11px] font-semibold text-on-surface-variant">Magetan</span>
                         </div>
                         <div className="h-4 w-px bg-surface-container-high" />
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1.5">
                             <div className="w-7 h-7 rounded-full bg-white border border-surface-container-high flex items-center justify-center p-0.5 overflow-hidden">
                                 <Image
-                                    alt="Logo KKN UNESA"
+                                    alt="Logo UNESA"
                                     className="w-full h-full object-contain"
                                     src="/logo-kkn-unesa.png"
                                     width={28}
                                     height={28}
                                 />
                             </div>
-                            <span className="text-xs font-semibold text-on-surface-variant">KKN UNESA</span>
+                            <span className="text-[11px] font-semibold text-on-surface-variant">UNESA</span>
+                        </div>
+                        <div className="h-4 w-px bg-surface-container-high" />
+                        <div className="flex items-center gap-1.5">
+                            <div className="w-7 h-7 rounded-full bg-white border border-surface-container-high flex items-center justify-center p-0.5 overflow-hidden">
+                                <Image
+                                    alt="Logo KKNT"
+                                    className="w-full h-full object-contain"
+                                    src="/Logo-KKNT.png"
+                                    width={28}
+                                    height={28}
+                                />
+                            </div>
+                            <span className="text-[11px] font-semibold text-on-surface-variant">KKNT</span>
                         </div>
                     </div>
                 </div>
