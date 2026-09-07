@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 
 const NAV_LINKS = [
@@ -184,13 +185,42 @@ export default function MobileMenu() {
                     {/* CTA Button */}
                     <div className="px-5 mt-4">
                         <a
-                            href="#kontak"
+                            href="#profil"
                             onClick={close}
                             className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-primary-container text-on-primary-container font-semibold text-sm hover:bg-primary hover:text-white transition-all shadow-sm"
                         >
-                            <MaterialIcon name="support_agent" className="text-[18px]" />
-                            <span>Layanan Warga</span>
+                            <MaterialIcon name="info" className="text-[18px]" />
+                            <span>About Us</span>
                         </a>
+                    </div>
+
+                    {/* Partner Logos */}
+                    <div className="p-4 mt-6 border-t border-surface-container-high flex items-center justify-around bg-surface-container-low/50">
+                        <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-full bg-white border border-surface-container-high flex items-center justify-center p-0.5 overflow-hidden">
+                                <Image
+                                    alt="Logo Kabupaten Magetan"
+                                    className="w-full h-full object-contain"
+                                    src="/logo-magetan.svg"
+                                    width={28}
+                                    height={28}
+                                />
+                            </div>
+                            <span className="text-xs font-semibold text-on-surface-variant">Kab. Magetan</span>
+                        </div>
+                        <div className="h-4 w-px bg-surface-container-high" />
+                        <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-full bg-white border border-surface-container-high flex items-center justify-center p-0.5 overflow-hidden">
+                                <Image
+                                    alt="Logo KKN UNESA"
+                                    className="w-full h-full object-contain"
+                                    src="/logo-kkn-unesa.png"
+                                    width={28}
+                                    height={28}
+                                />
+                            </div>
+                            <span className="text-xs font-semibold text-on-surface-variant">KKN UNESA</span>
+                        </div>
                     </div>
                 </div>
             </DrawerPortal>

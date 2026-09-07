@@ -8,13 +8,14 @@ export default function Header() {
             <div className="h-20 max-w-[1200px] mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
                 {/* Brand Logo & Identity */}
                 <a className="flex items-center gap-3 group" href="#">
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-fixed shadow-md shadow-primary/20 transition-transform group-hover:scale-105 overflow-hidden">
+                    <div className="w-10 h-10 rounded-full bg-white border border-surface-container-high flex items-center justify-center shadow-sm transition-transform group-hover:scale-105 overflow-hidden p-1">
                         <Image
-                            alt="Logo Desa Milangasri"
-                            className="w-full h-full object-contain rounded-full"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjw9PrgpX2pvflULquBr2-QQg6M86d0-tXjnxevbEWcBeK_B0ev0Euax9q_0gKkfTCIeevN6X1lj5fybDVKvxdhihvuQWI4HBRP0MLo8CbnBzFxnDTlnHI-7G9tfoldAeJNNKcdOcxOFcxBVk1rYMIPMneBEIckh1Ma6mGbPJzs08CAt6T7hBP6XhslRkDv4Sl9d2nAT7d8xm-RnYMFBx8fu9aSXHWCgmNkMQQ1w6vREBR7oaVhNcnUu3u5GoigfgyUYQ"
+                            alt="Logo Kabupaten Magetan"
+                            className="w-full h-full object-contain"
+                            src="/logo-magetan.svg"
                             width={40}
                             height={40}
+                            priority
                         />
                     </div>
                     <div className="flex flex-col">
@@ -130,17 +131,23 @@ export default function Header() {
                 <div className="flex items-center gap-3">
                     <a
                         className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-on-primary-container text-sm font-semibold hover:bg-primary hover:text-white transition-all shadow-sm"
-                        href="#kontak"
+                        href="#profil"
                     >
-                        <MaterialIcon name="support_agent" className="text-[18px]" />
-                        <span>Layanan Warga</span>
+                        <MaterialIcon name="info" className="text-[18px]" />
+                        <span>About Us</span>
                     </a>
                     <a
-                        className="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                        href="#geografi"
-                        title="Peta Lokasi"
+                        className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
+                        href="#profil"
+                        title="KKN UNESA Desa Milangasri"
                     >
-                        <MaterialIcon name="pin_drop" className="text-[20px]" />
+                        <Image
+                            alt="Logo KKN UNESA Desa Milangasri"
+                            className="w-full h-full object-contain"
+                            src="/logo-kkn-unesa.png"
+                            width={40}
+                            height={40}
+                        />
                     </a>
 
                     {/* Mobile Menu */}
