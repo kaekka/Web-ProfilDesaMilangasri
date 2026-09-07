@@ -29,12 +29,42 @@ export default function Header() {
 
                 {/* Desktop Navigation Menu */}
                 <nav className="hidden lg:flex items-center gap-1.5 p-1.5 bg-surface-container/70 rounded-full backdrop-blur-md border border-surface-container-highest">
-                    <a
-                        className="px-5 py-2 transition-all duration-200 bg-primary text-white font-semibold text-sm rounded-full shadow-sm"
-                        href="#profil"
-                    >
-                        Profil Desa
-                    </a>
+                    {/* Dropdown Profil Desa */}
+                    <div className="relative group">
+                        <button
+                            className="px-5 py-2 transition-all duration-200 bg-primary text-white font-semibold text-sm rounded-full shadow-sm flex items-center gap-1 cursor-pointer"
+                            type="button"
+                        >
+                            <span>Profil Desa</span>
+                            <MaterialIcon
+                                name="arrow_drop_down"
+                                className="text-[18px] transition-transform duration-200 group-hover:rotate-180"
+                            />
+                        </button>
+                        <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col min-w-[220px] p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50 transition-all">
+                            <a
+                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                href="/profil/sejarah"
+                            >
+                                <MaterialIcon name="history_edu" className="text-[18px] text-primary" />
+                                <span>Sejarah Desa</span>
+                            </a>
+                            <a
+                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                href="/profil/struktur"
+                            >
+                                <MaterialIcon name="account_tree" className="text-[18px] text-secondary" />
+                                <span>Struktur Organisasi</span>
+                            </a>
+                            <a
+                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                href="/profil/visi-misi"
+                            >
+                                <MaterialIcon name="track_changes" className="text-[18px] text-tertiary" />
+                                <span>Visi & Misi</span>
+                            </a>
+                        </div>
+                    </div>
                     <a
                         className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
                         href="#berita"

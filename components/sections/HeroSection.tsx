@@ -63,6 +63,13 @@ export default function HeroSection() {
             <span>Jelajahi Desa</span>
           </a>
           <a
+            className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary/90 text-on-primary font-semibold text-base shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5 active:scale-95"
+            href="#profil"
+          >
+            <MaterialIcon name="info" className="text-[20px]" />
+            <span>Informasi Desa</span>
+          </a>
+          <a
             className="px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white font-semibold text-base border border-white/20 transition-all duration-200 flex items-center gap-2"
             href="#geografi"
           >
