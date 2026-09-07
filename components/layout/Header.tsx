@@ -42,28 +42,30 @@ export default function Header() {
                                 className="text-[18px] transition-transform duration-200 group-hover:rotate-180"
                             />
                         </button>
-                        <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col min-w-[220px] p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50 transition-all">
-                            <a
-                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                href="/profil/sejarah"
-                            >
-                                <MaterialIcon name="history_edu" className="text-[18px] text-primary" />
-                                <span>Sejarah Desa</span>
-                            </a>
-                            <a
-                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                href="/profil/struktur"
-                            >
-                                <MaterialIcon name="account_tree" className="text-[18px] text-secondary" />
-                                <span>Struktur Organisasi</span>
-                            </a>
-                            <a
-                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                href="/profil/visi-misi"
-                            >
-                                <MaterialIcon name="track_changes" className="text-[18px] text-tertiary" />
-                                <span>Visi & Misi</span>
-                            </a>
+                        <div className="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[220px] pt-2">
+                            <div className="flex flex-col p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50">
+                                <a
+                                    className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                    href="/profil/sejarah"
+                                >
+                                    <MaterialIcon name="history_edu" className="text-[18px] text-primary" />
+                                    <span>Sejarah Desa</span>
+                                </a>
+                                <a
+                                    className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                    href="/profil/struktur"
+                                >
+                                    <MaterialIcon name="account_tree" className="text-[18px] text-secondary" />
+                                    <span>Struktur Organisasi</span>
+                                </a>
+                                <a
+                                    className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                    href="/profil/visi-misi"
+                                >
+                                    <MaterialIcon name="track_changes" className="text-[18px] text-tertiary" />
+                                    <span>Visi & Misi</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <a
@@ -85,37 +87,39 @@ export default function Header() {
                                 className="text-[18px] transition-transform duration-200 group-hover:rotate-180"
                             />
                         </button>
-                        <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col min-w-[190px] p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50 transition-all">
-                            <a
-                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                href="#umkm"
-                            >
-                                <MaterialIcon
-                                    name="storefront"
-                                    className="text-[18px] text-secondary"
-                                />
-                                <span>UMKM</span>
-                            </a>
-                            <a
-                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                href="#umkm"
-                            >
-                                <MaterialIcon
-                                    name="local_florist"
-                                    className="text-[18px] text-primary"
-                                />
-                                <span>Produk Lokal</span>
-                            </a>
-                            <a
-                                className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                href="#geografi"
-                            >
-                                <MaterialIcon
-                                    name="explore"
-                                    className="text-[18px] text-tertiary"
-                                />
-                                <span>Geografi</span>
-                            </a>
+                        <div className="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[190px] pt-2">
+                            <div className="flex flex-col p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50">
+                                <a
+                                    className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                    href="#umkm"
+                                >
+                                    <MaterialIcon
+                                        name="storefront"
+                                        className="text-[18px] text-secondary"
+                                    />
+                                    <span>UMKM</span>
+                                </a>
+                                <a
+                                    className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                    href="#umkm"
+                                >
+                                    <MaterialIcon
+                                        name="local_florist"
+                                        className="text-[18px] text-primary"
+                                    />
+                                    <span>Produk Lokal</span>
+                                </a>
+                                <a
+                                    className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
+                                    href="#geografi"
+                                >
+                                    <MaterialIcon
+                                        name="explore"
+                                        className="text-[18px] text-tertiary"
+                                    />
+                                    <span>Geografi</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
