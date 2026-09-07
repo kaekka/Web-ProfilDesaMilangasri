@@ -11,9 +11,9 @@ const NAV_LINKS = [
 ];
 
 const PROFIL_LINKS = [
-    { label: "Sejarah Desa", href: "/profil/sejarah", icon: "history_edu", color: "text-primary" },
-    { label: "Struktur Organisasi", href: "/profil/struktur", icon: "account_tree", color: "text-secondary" },
-    { label: "Visi & Misi", href: "/profil/visi-misi", icon: "track_changes", color: "text-tertiary" },
+    { label: "Sejarah Desa", href: "/profil/sejarah", icon: "history_edu", color: "text-primary", isModal: false },
+    { label: "Struktur Organisasi", href: "#", icon: "account_tree", color: "text-secondary", isModal: true },
+    { label: "Visi & Misi", href: "/profil/visi-misi", icon: "track_changes", color: "text-tertiary", isModal: false },
 ];
 
 const POTENSI_LINKS = [
@@ -33,7 +33,11 @@ function DrawerPortal({ children }: { children: React.ReactNode }) {
     return createPortal(children, document.body);
 }
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+    onStrukturOpen?: () => void;
+}
+
+export default function MobileMenu({ onStrukturOpen }: MobileMenuProps) {
     const [open, setOpen] = useState(false);
     const [potensiOpen, setPotensiOpen] = useState(false);
     const [profilOpen, setProfilOpen] = useState(false);
@@ -118,17 +122,32 @@ export default function MobileMenu() {
                         {/* Profil Sub-links */}
                         <div className={`overflow-hidden transition-all duration-200 ${profilOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}>
                             <div className="pl-4 flex flex-col gap-0.5">
-                                {PROFIL_LINKS.map((link) => (
-                                    <a
-                                        key={link.href + link.label}
-                                        href={link.href}
-                                        onClick={close}
-                                        className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
-                                    >
-                                        <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
-                                        <span>{link.label}</span>
-                                    </a>
-                                ))}
+                                {PROFIL_LINKS.map((link) =>
+                                    link.isModal ? (
+                                        <button
+                                            key={link.label}
+                                            type="button"
+                                            onClick={() => {
+                                                close();
+                                                onStrukturOpen?.();
+                                            }}
+                                            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors w-full text-left"
+                                        >
+                                            <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
+                                            <span>{link.label}</span>
+                                        </button>
+                                    ) : (
+                                        <a
+                                            key={link.href + link.label}
+                                            href={link.href}
+                                            onClick={close}
+                                            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
+                                        >
+                                            <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
+                                            <span>{link.label}</span>
+                                        </a>
+                                    )
+                                )}
                             </div>
                         </div>
 
