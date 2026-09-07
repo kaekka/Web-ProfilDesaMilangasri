@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Website Resmi Desa Milangasri - Kec. Panekan, Kab. Magetan",
   description:
     "Portal resmi pemerintahan Desa Milangasri, Kecamatan Panekan, Kabupaten Magetan. Informasi pembangunan desa, UMKM, berita, dan layanan warga lereng Gunung Lawu.",
+  icons: {
+    icon: "/logo-magetan.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
