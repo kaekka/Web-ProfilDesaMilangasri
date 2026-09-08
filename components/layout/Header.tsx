@@ -4,10 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 import MobileMenu from "./MobileMenu";
-import StrukturOrganisasiModal from "@/components/ui/StrukturOrganisasiModal";
 
 export default function Header() {
-    const [strukturOpen, setStrukturOpen] = useState(false);
 
     return (
         <>
@@ -37,45 +35,12 @@ export default function Header() {
 
                     {/* Desktop Navigation Menu */}
                     <nav className="hidden lg:flex items-center gap-1.5 p-1.5 bg-surface-container/70 rounded-full backdrop-blur-md border border-surface-container-highest">
-                        {/* Dropdown Profil Desa */}
-                        <div className="relative group">
-                            <button
-                                className="px-5 py-2 transition-all duration-200 bg-primary text-white font-semibold text-sm rounded-full shadow-sm flex items-center gap-1 cursor-pointer"
-                                type="button"
-                            >
-                                <span>Profil Desa</span>
-                                <MaterialIcon
-                                    name="arrow_drop_down"
-                                    className="text-[18px] transition-transform duration-200 group-hover:rotate-180"
-                                />
-                            </button>
-                            <div className="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[220px] pt-2">
-                                <div className="flex flex-col p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50">
-                                    <a
-                                        className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                        href="/profil/sejarah"
-                                    >
-                                        <MaterialIcon name="history_edu" className="text-[18px] text-primary" />
-                                        <span>Sejarah Desa</span>
-                                    </a>
-                                    <button
-                                        className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2 w-full"
-                                        type="button"
-                                        onClick={() => setStrukturOpen(true)}
-                                    >
-                                        <MaterialIcon name="account_tree" className="text-[18px] text-secondary" />
-                                        <span>Struktur Organisasi</span>
-                                    </button>
-                                    <a
-                                        className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                        href="/profil/visi-misi"
-                                    >
-                                        <MaterialIcon name="track_changes" className="text-[18px] text-tertiary" />
-                                        <span>Visi & Misi</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <a
+                            className="px-5 py-2 transition-all duration-200 bg-primary text-white font-semibold text-sm rounded-full shadow-sm flex items-center gap-1 cursor-pointer"
+                            href="/profil"
+                        >
+                            <span>Profil Desa</span>
+                        </a>
                         <a
                             className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
                             href="#berita"
@@ -176,16 +141,10 @@ export default function Header() {
                         </a>
 
                         {/* Mobile Menu */}
-                        <MobileMenu onStrukturOpen={() => setStrukturOpen(true)} />
+                        <MobileMenu />
                     </div>
                 </div>
             </header>
-
-            {/* Struktur Organisasi Modal */}
-            <StrukturOrganisasiModal
-                open={strukturOpen}
-                onClose={() => setStrukturOpen(false)}
-            />
         </>
     );
 }

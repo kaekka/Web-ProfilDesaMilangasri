@@ -64,7 +64,7 @@ export default function HeroSection() {
           </a>
           <a
             className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary/90 text-on-primary font-semibold text-base shadow-lg transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5 active:scale-95"
-            href="#profil"
+            href="/profil"
           >
             <MaterialIcon name="info" className="text-[20px]" />
             <span>Informasi Desa</span>

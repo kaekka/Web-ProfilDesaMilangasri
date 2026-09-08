@@ -6,14 +6,9 @@ import Image from "next/image";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 
 const NAV_LINKS = [
+    { label: "Profil Desa", href: "/profil", icon: "info" },
     { label: "Berita", href: "#berita", icon: "newspaper" },
     { label: "Kontak", href: "#kontak", icon: "call" },
-];
-
-const PROFIL_LINKS = [
-    { label: "Sejarah Desa", href: "/profil/sejarah", icon: "history_edu", color: "text-primary", isModal: false },
-    { label: "Struktur Organisasi", href: "#", icon: "account_tree", color: "text-secondary", isModal: true },
-    { label: "Visi & Misi", href: "/profil/visi-misi", icon: "track_changes", color: "text-tertiary", isModal: false },
 ];
 
 const POTENSI_LINKS = [
@@ -33,14 +28,9 @@ function DrawerPortal({ children }: { children: React.ReactNode }) {
     return createPortal(children, document.body);
 }
 
-interface MobileMenuProps {
-    onStrukturOpen?: () => void;
-}
-
-export default function MobileMenu({ onStrukturOpen }: MobileMenuProps) {
+export default function MobileMenu() {
     const [open, setOpen] = useState(false);
     const [potensiOpen, setPotensiOpen] = useState(false);
-    const [profilOpen, setProfilOpen] = useState(false);
 
     // Lock body scroll when menu is open
     useEffect(() => {
@@ -57,7 +47,6 @@ export default function MobileMenu({ onStrukturOpen }: MobileMenuProps) {
     const close = useCallback(() => {
         setOpen(false);
         setPotensiOpen(false);
-        setProfilOpen(false);
     }, []);
 
     return (
@@ -103,54 +92,6 @@ export default function MobileMenu({ onStrukturOpen }: MobileMenuProps) {
 
                     {/* Nav Links */}
                     <nav className="flex flex-col p-4 gap-1">
-                        {/* Profil Desa Accordion */}
-                        <button
-                            type="button"
-                            onClick={() => setProfilOpen(!profilOpen)}
-                            className="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors w-full"
-                        >
-                            <div className="flex items-center gap-3">
-                                <MaterialIcon name="info" className="text-[20px] text-on-surface-variant" />
-                                <span>Profil Desa</span>
-                            </div>
-                            <MaterialIcon
-                                name="expand_more"
-                                className={`text-[20px] text-on-surface-variant transition-transform duration-200 ${profilOpen ? "rotate-180" : ""}`}
-                            />
-                        </button>
-
-                        {/* Profil Sub-links */}
-                        <div className={`overflow-hidden transition-all duration-200 ${profilOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}>
-                            <div className="pl-4 flex flex-col gap-0.5">
-                                {PROFIL_LINKS.map((link) =>
-                                    link.isModal ? (
-                                        <button
-                                            key={link.label}
-                                            type="button"
-                                            onClick={() => {
-                                                close();
-                                                onStrukturOpen?.();
-                                            }}
-                                            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors w-full text-left"
-                                        >
-                                            <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
-                                            <span>{link.label}</span>
-                                        </button>
-                                    ) : (
-                                        <a
-                                            key={link.href + link.label}
-                                            href={link.href}
-                                            onClick={close}
-                                            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-on-surface font-medium text-sm hover:bg-surface-container hover:text-primary transition-colors"
-                                        >
-                                            <MaterialIcon name={link.icon} className={`text-[18px] ${link.color}`} />
-                                            <span>{link.label}</span>
-                                        </a>
-                                    )
-                                )}
-                            </div>
-                        </div>
-
                         {NAV_LINKS.map((link) => (
                             <a
                                 key={link.href + link.label}
