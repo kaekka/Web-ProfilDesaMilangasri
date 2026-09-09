@@ -38,7 +38,7 @@ export default function Header() {
                     <nav className="hidden lg:flex items-center gap-1.5 p-1.5 bg-surface-container/70 rounded-full backdrop-blur-md border border-surface-container-highest">
                         <Link
                             className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
-                            href="/profil"
+                            href="/"
                         >
                             <span>Profil Desa</span>
                         </Link>
