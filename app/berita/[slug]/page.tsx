@@ -79,9 +79,9 @@ export default async function BeritaDetailPage({
 
           {/* Content */}
           {article.content ? (
-            <div className="prose prose-lg max-w-none text-on-surface-variant leading-relaxed">
+                      <div className="prose prose-lg max-w-none text-on-surface-variant leading-relaxed">
               {article.content.split("\n\n").map((paragraph, i) => (
-                <p key={i} className="mb-5">
+                <p key={i} className="mb-5 text-justify">
                   {paragraph}
                 </p>
               ))}
@@ -92,10 +92,10 @@ export default async function BeritaDetailPage({
                 name="article"
                 className="text-[48px] text-on-surface-variant/50 mb-3"
               />
-              <p className="text-on-surface-variant text-base">
+                            <p className="text-on-surface-variant text-base">
                 Konten lengkap berita ini belum tersedia.
               </p>
-              <p className="text-on-surface-variant/70 text-sm mt-1">
+              <p className="text-on-surface-variant/70 text-sm mt-1 text-justify">
                 {article.description}
               </p>
             </div>
