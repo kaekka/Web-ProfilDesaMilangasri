@@ -79,11 +79,14 @@ export default function AboutUsSection() {
             src="/gunglawumilangasri.jpeg"
             alt="Pemandangan Desa Milangasri"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-85"
             priority
+            quality={90}
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/95 to-primary z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-primary/35 to-primary/85 z-0" />
+        <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed/10 blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-6 text-center flex flex-col items-center">
           {/* Breadcrumb */}
