@@ -145,7 +145,7 @@ export default function MobileMenu() {
                     {/* CTA Button */}
                     <div className="px-5 mt-4">
                         <a
-                            href="/profil"
+                            href="/about"
                             onClick={close}
                             className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-primary-container text-on-primary-container font-semibold text-sm hover:bg-primary hover:text-white transition-all shadow-sm"
                         >

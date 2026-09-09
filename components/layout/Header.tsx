@@ -20,6 +20,11 @@ export default function Header() {
 
     // ScrollSpy to detect active section on scroll
     useEffect(() => {
+        if (pathname === "/about") {
+            setActiveSection("");
+            return;
+        }
+
         if (pathname === "/profil") {
             setActiveSection("profil");
             return;
@@ -69,6 +74,11 @@ export default function Header() {
                 width: activeEl.offsetWidth,
                 opacity: 1,
             });
+        } else {
+            setIndicatorStyle((prev) => ({
+                ...prev,
+                opacity: 0,
+            }));
         }
     }, [activeSection]);
 
@@ -218,15 +228,19 @@ export default function Header() {
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">
                         <Link
-                            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-on-primary-container text-sm font-semibold hover:bg-primary hover:text-white transition-all shadow-sm"
-                            href="/profil"
+                            className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm ${
+                                pathname === "/about"
+                                    ? "bg-primary text-white"
+                                    : "bg-primary-container text-on-primary-container hover:bg-primary hover:text-white"
+                            }`}
+                            href="/about"
                         >
                             <MaterialIcon name="info" className="text-[18px]" />
                             <span>About Us</span>
                         </Link>
                         <Link
                             className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
-                            href="/profil"
+                            href="/about"
                             title="Universitas Negeri Surabaya (UNESA)"
                         >
                             <Image
@@ -239,7 +253,7 @@ export default function Header() {
                         </Link>
                         <Link
                             className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
-                            href="/profil"
+                            href="/about"
                             title="KKN Tematik Desa Milangasri"
                         >
                             <Image
