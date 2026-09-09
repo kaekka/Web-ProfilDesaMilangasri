@@ -21,6 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="id"
       className="scroll-smooth"
+      suppressHydrationWarning
     >
       <head>
         <link
