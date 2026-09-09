@@ -36,12 +36,12 @@ export default function Header() {
 
                     {/* Desktop Navigation Menu */}
                     <nav className="hidden lg:flex items-center gap-1.5 p-1.5 bg-surface-container/70 rounded-full backdrop-blur-md border border-surface-container-highest">
-                        <a
-                            className="px-5 py-2 transition-all duration-200 bg-primary text-white font-semibold text-sm rounded-full shadow-sm flex items-center gap-1 cursor-pointer"
+                        <Link
+                            className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
                             href="/profil"
                         >
                             <span>Profil Desa</span>
-                        </a>
+                        </Link>
                         <Link
                             className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
                             href="/#berita"
