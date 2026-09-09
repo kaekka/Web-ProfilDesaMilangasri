@@ -2,22 +2,8 @@ import MaterialIcon from "@/components/icons/MaterialIcon";
 
 export default function Footer() {
     return (
-        <footer
-            className="relative w-full bg-primary text-white mt-12 overflow-hidden"
-            id="kontak"
-        >
-            {/* Wave top divider */}
-            <div className="w-full overflow-hidden leading-none">
-                <svg
-                    className="relative block w-full h-10 text-surface-container fill-current"
-                    preserveAspectRatio="none"
-                    viewBox="0 0 1200 120"
-                >
-                    <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,0 L0,0 Z" />
-                </svg>
-            </div>
-
-            <div className="max-w-[1200px] mx-auto px-4 md:px-6 pt-10 pb-16">
+        <footer className="relative w-full bg-primary text-white overflow-hidden border-t border-primary-container/30">
+            <div className="max-w-[1200px] mx-auto px-4 md:px-6 pt-12 pb-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {/* Kolom 1: Profil Singkat */}
                     <div className="flex flex-col gap-4">
