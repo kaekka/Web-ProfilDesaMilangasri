@@ -20,7 +20,7 @@ export const ARTICLES: Article[] = [
     category: "KKNT UNESA",
     categoryColor: "text-tertiary",
     date: "13 Agu 2026",
-    image: "/PembukaanKKNTPanekan.jpg",
+    image: "/images/berita/pembukaan-kknt-panekan.jpg",
     alt: "Pembukaan KKNT UNESA di Kecamatan Panekan Magetan",
     content: `Universitas Negeri Surabaya (UNESA) resmi menerjunkan mahasiswa peserta Kuliah Kerja Nyata Tematik (KKNT) Semester Gasal 2026/2027 ke sejumlah desa di Kecamatan Panekan, Kabupaten Magetan, 13 Agustus 2026. Acara penerimaan sekaligus penyerahan mahasiswa ini menandai dimulainya rangkaian kegiatan pengabdian masyarakat yang akan berlangsung hingga 25 September 2026.
 
@@ -42,8 +42,7 @@ Selama kurang lebih enam pekan ke depan, mahasiswa akan tinggal di desa penempat
     category: "Pembangunan Desa",
     categoryColor: "text-primary",
     date: "12 Okt 2024",
-    image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1Wlh5pysWXF8-DgjtuZVe0wk8cAn1GIxjzki0lQ_0J8XRmhHo8CRG75RSKEmFNi9Gzb63Nbs3rkjY1tuP1CrVqryrDDIc6a94Mhi1g7tpF-Xsh-4XxuB4p6xjae-_1xGzfCg8cYf3abv_lUVpq5MtKte_IWodHSllh0ZI-D05LLUcCPD2pm0yta8Fd8RlwXQTJn8T3B40sq_-ZzybXxGhmyn5iMZ4PpmtuMwEkh-agUWor4lpVFHPpprvw-",
+    image: "/images/berita/bantuan-digitalisasi.jpg",
     alt: "Penyaluran Bantuan dan Pelayanan Balai Desa",
   },
   {
@@ -54,8 +53,7 @@ Selama kurang lebih enam pekan ke depan, mahasiswa akan tinggal di desa penempat
     category: "Pemberdayaan UMKM",
     categoryColor: "text-secondary",
     date: "08 Okt 2024",
-    image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1UHTkL7MA-C1NTcJeTI7x5xnbfcyS8cv7EdhMke2LT5_K3_GCSewSTIrikQdJ7kpdqKeXQB4yBTQlA4dTMPNPqWYcwBEoov84ATsRDwbqDA9mJ26fc7vtSH6wx9QGhwvMjLHDdSXxVvob61v9vCq1RY_4aIlwin8hOqsPjB9rjsnydm3nfGCTKUPicKwXbpPLjW2APQlRfAydT0VJb0cdkKrDtu7hnKSOp5u7S-Yg9qR1bmQOx8KstPNpDL",
+    image: "/images/berita/pelatihan-umkm.jpg",
     alt: "Pelatihan Pemasaran Digital bagi Pelaku UMKM Lokal",
   },
   {
@@ -66,8 +64,7 @@ Selama kurang lebih enam pekan ke depan, mahasiswa akan tinggal di desa penempat
     category: "Tradisi & Budaya",
     categoryColor: "text-primary",
     date: "02 Okt 2024",
-    image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1Wi_onYNUesHgguDxePuJom5IxMiYJZZw6UahKhvgHiiIaCcOgABPW-UFyabiiKjO42AdqCpPBRMPbAlSPQnNFkZOmGNTXTMJfn1RlXiaOQiijmkEs0tHIU0pVJxbxmbE3k359XoevkBaFoRaqIUxPFsG6aS1mesGUdQ3HEZxldQTZqqVDSLqTkghMSgzx4Jvqyb4yc8iw5VML7C12VME1sAxGD-7njFvfslBh_tfkYbKJ09MAH5PB2K3EM",
+    image: "/images/berita/festival-bersih-desa.jpg",
     alt: "Semarak Festival Tradisi Bersih Desa Milangasri",
   },
 ];
