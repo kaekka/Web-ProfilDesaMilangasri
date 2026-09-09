@@ -65,7 +65,7 @@ export default function BeritaSection() {
                   <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-on-surface-variant mt-3 leading-relaxed">
+                  <p className="text-sm text-on-surface-variant mt-3 leading-relaxed text-justify">
                     {article.description}
                   </p>
                 </div>
