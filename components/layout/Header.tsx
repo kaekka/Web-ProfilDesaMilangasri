@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 import MobileMenu from "./MobileMenu";
 
@@ -12,7 +13,7 @@ export default function Header() {
             <header className="fixed top-0 left-0 right-0 w-full z-50 bg-white backdrop-blur-xl border-b border-surface-container-high shadow-[0_2px_10px_rgba(51,69,13,0.06)] transition-all duration-300">
                 <div className="h-20 max-w-[1200px] mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
                     {/* Brand Logo & Identity */}
-                    <a className="flex items-center gap-3 group" href="#">
+                    <Link className="flex items-center gap-3 group" href="/">
                         <div className="w-10 h-10 rounded-full bg-white border border-surface-container-high flex items-center justify-center shadow-sm transition-transform group-hover:scale-105 overflow-hidden p-1">
                             <Image
                                 alt="Logo Kabupaten Magetan"
@@ -31,7 +32,7 @@ export default function Header() {
                                 Kec. Panekan, Kab. Magetan
                             </span>
                         </div>
-                    </a>
+                    </Link>
 
                     {/* Desktop Navigation Menu */}
                     <nav className="hidden lg:flex items-center gap-1.5 p-1.5 bg-surface-container/70 rounded-full backdrop-blur-md border border-surface-container-highest">
@@ -41,12 +42,12 @@ export default function Header() {
                         >
                             <span>Profil Desa</span>
                         </a>
-                        <a
+                        <Link
                             className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
-                            href="#berita"
+                            href="/#berita"
                         >
                             Berita
-                        </a>
+                        </Link>
 
                         {/* Dropdown Potensi Desa */}
                         <div className="relative group">
@@ -62,60 +63,60 @@ export default function Header() {
                             </button>
                             <div className="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[190px] pt-2">
                                 <div className="flex flex-col p-2 bg-white rounded-2xl shadow-xl border border-surface-container-high z-50">
-                                    <a
+                                    <Link
                                         className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                        href="#umkm"
+                                        href="/#umkm"
                                     >
                                         <MaterialIcon
                                             name="storefront"
                                             className="text-[18px] text-secondary"
                                         />
                                         <span>UMKM</span>
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                        href="#umkm"
+                                        href="/#umkm"
                                     >
                                         <MaterialIcon
                                             name="local_florist"
                                             className="text-[18px] text-primary"
                                         />
                                         <span>Produk Lokal</span>
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                        href="#geografi"
+                                        href="/#geografi"
                                     >
                                         <MaterialIcon
                                             name="explore"
                                             className="text-[18px] text-tertiary"
                                         />
                                         <span>Geografi</span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
 
-                        <a
+                        <Link
                             className="px-5 py-2 rounded-full font-medium text-sm text-on-surface-variant hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors duration-200"
-                            href="#kontak"
+                            href="/#kontak"
                         >
                             Kontak
-                        </a>
+                        </Link>
                     </nav>
 
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">
-                        <a
+                        <Link
                             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-on-primary-container text-sm font-semibold hover:bg-primary hover:text-white transition-all shadow-sm"
-                            href="#profil"
+                            href="/profil"
                         >
                             <MaterialIcon name="info" className="text-[18px]" />
                             <span>About Us</span>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
-                            href="#profil"
+                            href="/profil"
                             title="Universitas Negeri Surabaya (UNESA)"
                         >
                             <Image
@@ -125,10 +126,10 @@ export default function Header() {
                                 width={40}
                                 height={40}
                             />
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className="w-10 h-10 rounded-full bg-white border border-surface-container-high shadow-sm flex items-center justify-center hover:scale-105 transition-all p-1 overflow-hidden"
-                            href="#profil"
+                            href="/profil"
                             title="KKN Tematik Desa Milangasri"
                         >
                             <Image
@@ -138,7 +139,7 @@ export default function Header() {
                                 width={40}
                                 height={40}
                             />
-                        </a>
+                        </Link>
 
                         {/* Mobile Menu */}
                         <MobileMenu />

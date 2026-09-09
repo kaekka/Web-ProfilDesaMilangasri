@@ -7,14 +7,14 @@ import MaterialIcon from "@/components/icons/MaterialIcon";
 
 const NAV_LINKS = [
     { label: "Profil Desa", href: "/profil", icon: "info" },
-    { label: "Berita", href: "#berita", icon: "newspaper" },
-    { label: "Kontak", href: "#kontak", icon: "call" },
+    { label: "Berita", href: "/#berita", icon: "newspaper" },
+    { label: "Kontak", href: "/#kontak", icon: "call" },
 ];
 
 const POTENSI_LINKS = [
-    { label: "UMKM", href: "#umkm", icon: "storefront", color: "text-secondary" },
-    { label: "Produk Lokal", href: "#umkm", icon: "local_florist", color: "text-primary" },
-    { label: "Geografi", href: "#geografi", icon: "explore", color: "text-tertiary" },
+    { label: "UMKM", href: "/#umkm", icon: "storefront", color: "text-secondary" },
+    { label: "Produk Lokal", href: "/#umkm", icon: "local_florist", color: "text-primary" },
+    { label: "Geografi", href: "/#geografi", icon: "explore", color: "text-tertiary" },
 ];
 
 function DrawerPortal({ children }: { children: React.ReactNode }) {
@@ -145,7 +145,7 @@ export default function MobileMenu() {
                     {/* CTA Button */}
                     <div className="px-5 mt-4">
                         <a
-                            href="#profil"
+                            href="/profil"
                             onClick={close}
                             className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-primary-container text-on-primary-container font-semibold text-sm hover:bg-primary hover:text-white transition-all shadow-sm"
                         >
