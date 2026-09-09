@@ -1,39 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
-// Using system fonts as fallback to avoid Google Fonts connection timeout
+// Google Fonts (Inter & Plus Jakarta Sans) are defined as CSS variables
+// in globals.css with system font fallbacks to avoid connection timeout
 // when running offline or behind a restricted network.
-// Swap these back to next/font/google when internet is available.
-const plusJakartaSans = localFont({
-  src: [],
-  variable: "--font-plus-jakarta-sans",
-  fallback: [
-    "Plus Jakarta Sans",
-    "ui-sans-serif",
-    "system-ui",
-    "-apple-system",
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "sans-serif",
-  ],
-  display: "swap",
-});
-
-const inter = localFont({
-  src: [],
-  variable: "--font-inter-variable",
-  fallback: [
-    "Inter",
-    "ui-sans-serif",
-    "system-ui",
-    "-apple-system",
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "sans-serif",
-  ],
-  display: "swap",
-});
+// To use real Google Fonts, re-add next/font/google imports and inject
+// the variables via className on <html> as before.
 
 export const metadata: Metadata = {
   title: "Website Resmi Desa Milangasri - Kec. Panekan, Kab. Magetan",
@@ -48,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="id"
-      className={`${plusJakartaSans.variable} ${inter.variable} scroll-smooth`}
+      className="scroll-smooth"
     >
       <head>
         <link
