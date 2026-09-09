@@ -1,18 +1,37 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+// Using system fonts as fallback to avoid Google Fonts connection timeout
+// when running offline or behind a restricted network.
+// Swap these back to next/font/google when internet is available.
+const plusJakartaSans = localFont({
+  src: [],
   variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  fallback: [
+    "Plus Jakarta Sans",
+    "ui-sans-serif",
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "sans-serif",
+  ],
   display: "swap",
 });
 
-const inter = Inter({
+const inter = localFont({
+  src: [],
   variable: "--font-inter-variable",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  fallback: [
+    "Inter",
+    "ui-sans-serif",
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "sans-serif",
+  ],
   display: "swap",
 });
 
