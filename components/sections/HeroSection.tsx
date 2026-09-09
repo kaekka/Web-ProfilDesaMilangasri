@@ -47,7 +47,7 @@ export default function HeroSection() {
 
         {/* Description */}
         <p className="text-base md:text-lg text-white/85 max-w-3xl mt-5 leading-relaxed font-normal">
-          Menghidupkan kemakmuran agraris di ketinggian 840 mdpl. Diberkahi
+          Menghidupkan kemakmuran agraris di ketinggian 840 meter. Diberkahi
           kesegaran 12 mata air vulkanis abadi, hamparan terasering hijau subur,
           dan kehangatan gotong royong warga lereng timur Gunung Lawu, Kecamatan
           Panekan, Magetan.

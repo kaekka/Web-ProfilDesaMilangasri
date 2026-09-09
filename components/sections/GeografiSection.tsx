@@ -1,6 +1,27 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 
 export default function GeografiSection() {
+  const [temperature, setTemperature] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Desa Milangasri coordinates (~7.60°S, 111.38°E)
+    fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=-7.60&longitude=111.38&current=temperature_2m&timezone=Asia%2FJakarta"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.current?.temperature_2m != null) {
+          setTemperature(`${Math.round(data.current.temperature_2m)}°C`);
+        }
+      })
+      .catch(() => {
+        setTemperature("—");
+      });
+  }, []);
+
   return (
     <section
       className="w-full bg-surface-container py-16 md:py-24 relative"
@@ -35,10 +56,10 @@ export default function GeografiSection() {
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-base text-on-surface">
-                  18° - 24°C
+                  {temperature ?? "..."}
                 </span>
                 <span className="text-xs text-on-surface-variant font-medium">
-                  Suhu Udara Sejuk
+                  Suhu Saat Ini
                 </span>
               </div>
             </div>
@@ -48,7 +69,7 @@ export default function GeografiSection() {
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-base text-on-surface">
-                  840 mdpl
+                  840 m
                 </span>
                 <span className="text-xs text-on-surface-variant font-medium">
                   Elevasi Lereng
