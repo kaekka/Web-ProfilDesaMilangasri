@@ -12,6 +12,31 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: "upacara-penurunan-bendera-hut-ri-ke-81-di-lapangan-kecamatan-panekan",
+    title:
+      "Upacara Penurunan Bendera HUT RI ke-81 di Lapangan Kecamatan Panekan Berlangsung Khidmat, Diikuti Mahasiswa KKN",
+    description:
+      "Upacara penurunan bendera HUT RI ke-81 di Lapangan Kecamatan Panekan berlangsung khidmat dan diikuti mahasiswa KKN bersama unsur pemerintah, TNI-Polri, pelajar, serta masyarakat.",
+    category: "Kegiatan Masyarakat",
+    categoryColor: "text-primary",
+    date: "17 Agu 2026",
+    image: "/images/berita/upacara-penurunan-bendera-panekan.jpeg",
+    alt: "Mahasiswa KKN bersama pejabat Kecamatan Panekan seusai upacara penurunan bendera",
+    content: `Magetan - Upacara penurunan bendera dalam rangka memperingati Hari Ulang Tahun Kemerdekaan Republik Indonesia ke-81 berlangsung khidmat di Lapangan Kecamatan Panekan, Kabupaten Magetan, Minggu (17/8) sore. Upacara ini menjadi rangkaian penutup dari serangkaian kegiatan peringatan kemerdekaan yang telah berlangsung sepanjang hari di wilayah tersebut, sekaligus menjadi penutup resmi bagi seluruh rangkaian perayaan HUT RI di tingkat kecamatan.
+
+Upacara dimulai pada sore hari, ditandai dengan barisan peserta yang telah bersiap sejak beberapa saat sebelumnya di area lapangan kecamatan. Bertindak sebagai petugas upacara adalah gabungan dari unsur TNI-Polri, perangkat kecamatan, serta pelajar dari sekolah-sekolah di wilayah Panekan yang telah dipersiapkan secara khusus untuk mengemban tugas sebagai pasukan pengibar/penurun bendera. Prosesi penurunan bendera Merah Putih berlangsung dengan tertib dan penuh kekhidmatan, diiringi lagu-lagu kebangsaan yang menambah suasana haru sekaligus bangga bagi seluruh yang hadir.
+
+Turut hadir dan berpartisipasi sebagai peserta upacara adalah mahasiswa Kuliah Kerja Nyata (KKN) yang tengah menjalankan program pengabdian masyarakat di wilayah Kecamatan Panekan. Para mahasiswa KKN hadir berbaur bersama unsur pemerintah kecamatan, perangkat desa, TNI-Polri, pelajar, dan warga masyarakat yang turut mengikuti jalannya upacara dengan tertib dan disiplin. Kehadiran mereka dalam barisan peserta menunjukkan semangat kebersamaan antara mahasiswa dan masyarakat setempat dalam memperingati hari bersejarah bangsa.
+
+Keikutsertaan mahasiswa KKN dalam upacara tersebut merupakan bentuk partisipasi aktif dalam kegiatan kemasyarakatan sekaligus wujud penghormatan terhadap jasa para pahlawan yang telah memperjuangkan kemerdekaan bangsa. Selain sebagai bagian dari agenda pengabdian masyarakat, keterlibatan ini juga menjadi sarana bagi mahasiswa untuk lebih mengenal dan menyatu dengan kehidupan sosial masyarakat di lokasi KKN, termasuk dalam momen-momen kenegaraan seperti peringatan kemerdekaan.
+
+Suasana lapangan Kecamatan Panekan sore itu tampak khusyuk sekaligus meriah. Warga dari berbagai kalangan usia turut memadati area sekitar lapangan untuk menyaksikan jalannya upacara. Semangat nasionalisme terasa begitu kental, terlebih dengan antusiasme generasi muda, baik pelajar maupun mahasiswa KKN yang ikut ambil bagian dalam kegiatan tersebut.
+
+Upacara penurunan bendera ini menjadi penutup rangkaian panjang peringatan HUT RI di Kecamatan Panekan, yang sebelumnya juga diisi dengan berbagai kegiatan seperti perlombaan warga, kirab budaya, hingga kegiatan sosial lainnya yang melibatkan seluruh elemen masyarakat, termasuk mahasiswa KKN yang berkontribusi dalam berbagai kepanitiaan dan pelaksanaan kegiatan.
+
+Dengan berakhirnya upacara penurunan bendera, rangkaian peringatan HUT Kemerdekaan RI ke-81 di Kecamatan Panekan resmi ditutup. Kegiatan ini diharapkan dapat terus mempererat rasa persatuan dan kesatuan, baik antarwarga maupun antara masyarakat dengan mahasiswa yang tengah mengabdi di wilayah tersebut, sekaligus menumbuhkan semangat cinta tanah air pada generasi muda.`,
+  },
+  {
     slug: "unesa-terjunkan-puluhan-mahasiswa-kknt-di-kecamatan-panekan",
     title:
       "UNESA Terjunkan Puluhan Mahasiswa KKNT di Kecamatan Panekan, Magetan",
