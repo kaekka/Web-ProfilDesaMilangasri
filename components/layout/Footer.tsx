@@ -43,13 +43,6 @@ export default function Footer() {
                                 />
                                 <span>Balai Desa: Jl. Raya Panekan - Milangasri Km 2</span>
                             </div>
-                            <div className="flex items-start gap-2">
-                                <MaterialIcon
-                                    name="fact_check"
-                                    className="text-[18px] shrink-0 mt-0.5"
-                                />
-                                <span>Sistem Registrasi Warga &amp; APBDes Terbuka</span>
-                            </div>
                         </div>
                     </div>
 
@@ -73,14 +66,14 @@ export default function Footer() {
                                     name="mail"
                                     className="text-[18px] shrink-0 mt-0.5"
                                 />
-                                <span>Surel: kontak@milangasri.desa.id</span>
+                                <span>Surel: pemerintahdesamilangasri@gmail.com</span>
                             </div>
                             <div className="flex items-start gap-2">
                                 <MaterialIcon
                                     name="call"
                                     className="text-[18px] shrink-0 mt-0.5"
                                 />
-                                <span>Telepon Siaga: (0351) 895-021</span>
+                                <span>Telepon: 085136023678</span>
                             </div>
                         </div>
                     </div>
