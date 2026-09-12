@@ -1,7 +1,9 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState, useTransition } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import imageCompression from "browser-image-compression";
 
 interface UmkmFormProps {
   action: (prevState: { error?: string } | null | void, formData: FormData) => Promise<{ error?: string } | void>;
@@ -37,10 +39,46 @@ export default function UmkmForm({
   submitLabel = "Simpan UMKM",
   backHref = "/admin/umkm",
 }: UmkmFormProps) {
-  const [state, formAction, pending] = useActionState(action, null);
+  const [state, formAction, isPending] = useActionState(action, null);
+  const [isCompressing, startCompressing] = useTransition();
+  const [preview, setPreview] = useState(defaultValues?.image_url || "");
+
+  const pending = isPending || isCompressing;
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setPreview(url);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const file = formData.get("image") as File;
+
+    if (file && file.size > 0) {
+      startCompressing(async () => {
+        try {
+          const compressedFile = await imageCompression(file, {
+            maxSizeMB: 3,
+            maxWidthOrHeight: 1920,
+            useWebWorker: true,
+          });
+          formData.set("image", compressedFile, compressedFile.name);
+        } catch (error) {
+          console.error("Error compressing image:", error);
+        }
+        formAction(formData);
+      });
+    } else {
+      formAction(formData);
+    }
+  };
 
   return (
-    <form id="umkm-form" action={formAction} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6">
       {state?.error && (
         <div className="flex items-start gap-3 bg-error-container text-on-error-container rounded-xl px-5 py-4 text-sm font-medium">
           <span className="material-symbols-outlined text-[18px] mt-0.5 shrink-0">
@@ -188,22 +226,38 @@ export default function UmkmForm({
             />
           </div>
 
-          {/* Image URL */}
+          {/* Image Upload */}
           <div>
             <label
-              htmlFor="umkm-image-url"
+              htmlFor="umkm-image"
               className="block text-sm font-semibold text-on-surface mb-1.5"
             >
-              URL / Path Foto
+              Foto UMKM
             </label>
+            
+            {preview && (
+              <div className="relative w-full h-48 mb-3 rounded-xl overflow-hidden border border-outline-variant bg-slate-50">
+                <Image
+                  src={preview}
+                  alt="Preview"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                />
+              </div>
+            )}
+
             <input
-              id="umkm-image-url"
-              name="image_url"
-              type="text"
-              defaultValue={defaultValues.image_url}
-              placeholder="/images/umkm/nama-file.jpg"
-              className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface text-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition"
+              id="umkm-image"
+              name="image"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-secondary/10 file:text-secondary hover:file:bg-secondary/20 transition"
             />
+            <p className="text-xs text-on-surface-variant mt-1">
+              Pilih foto UMKM (Otomatis dikompres &lt;3MB). Jika dikosongkan, foto lama tetap digunakan.
+            </p>
           </div>
 
           {/* Google Maps URL */}
