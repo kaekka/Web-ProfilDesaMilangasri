@@ -7,13 +7,13 @@ import MaterialIcon from "@/components/icons/MaterialIcon";
 const KONTAK = {
   namaKepala: "Bpk. Anggit Ardiyanto, S.H.",
   jabatan: "Kepala Desa Milangasri",
-  alamat: "Jl. Desa Milangasri, Kec. Panekan, Kab. Magetan, Jawa Timur 63381",
-  telepon: "+6285804512345",
-  whatsapp: "+6285804512345",
-  email: "desamilangasri@gmail.com",
+  alamat: "Jl. Raya MAY. JEND. Sukowati No.35, Waru Kulon, Milangasri, Panekan, Kabupaten Magetan, Jawa Timur 63352",
+  telepon: "+6285136023678",
+  whatsapp: "+6285136023678",
+  email: "pemerintahdesamilangasri@gmail.com",
   jamLayanan: "Senin – Jumat, 08.00 – 15.00 WIB",
 };
-// ─────────────────────────────────────────────────────────────────────────────
+// ───────────────────────────────────────────────────────────────────────────── 
 
 const CONTACT_CARDS = [
   {
