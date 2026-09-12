@@ -18,6 +18,7 @@ export async function createUmkmAction(
   const kontak = (formData.get("kontak") as string)?.trim();
   const alamat = (formData.get("alamat") as string)?.trim();
   const image_url = (formData.get("image_url") as string)?.trim();
+  const maps_url = (formData.get("maps_url") as string)?.trim();
 
   if (!nama) return { error: "Nama UMKM wajib diisi." };
 
@@ -30,6 +31,7 @@ export async function createUmkmAction(
     kontak,
     alamat,
     image_url,
+    maps_url,
   });
 
   if (error) return { error: error.message };
@@ -53,12 +55,13 @@ export async function updateUmkmAction(
   const kontak = (formData.get("kontak") as string)?.trim();
   const alamat = (formData.get("alamat") as string)?.trim();
   const image_url = (formData.get("image_url") as string)?.trim();
+  const maps_url = (formData.get("maps_url") as string)?.trim();
 
   if (!nama) return { error: "Nama UMKM wajib diisi." };
 
   const { error } = await supabase
     .from("umkm")
-    .update({ nama, pemilik, kategori, deskripsi, produk, kontak, alamat, image_url })
+    .update({ nama, pemilik, kategori, deskripsi, produk, kontak, alamat, image_url, maps_url })
     .eq("id", id);
 
   if (error) return { error: error.message };

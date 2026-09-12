@@ -23,6 +23,7 @@ const STATIC_UMKM = [
     kontak: null,
     alamat: "Dusun 3, Milangasri",
     image_url: "/images/umkm/keripik-pisang.jpg",
+    maps_url: null,
   },
   {
     id: "static-2",
@@ -34,6 +35,7 @@ const STATIC_UMKM = [
     kontak: null,
     alamat: "Dusun Tirta, Milangasri",
     image_url: "/images/umkm/sayur-organik.jpg",
+    maps_url: null,
   },
   {
     id: "static-3",
@@ -45,6 +47,7 @@ const STATIC_UMKM = [
     kontak: null,
     alamat: "Dusun Hutan, Milangasri",
     image_url: "/images/umkm/madu-murni.jpg",
+    maps_url: null,
   },
   {
     id: "static-4",
@@ -56,6 +59,7 @@ const STATIC_UMKM = [
     kontak: null,
     alamat: "Dusun Krajan, Milangasri",
     image_url: "/images/umkm/anyaman-bambu.jpg",
+    maps_url: null,
   },
 ];
 
@@ -69,6 +73,7 @@ type UmkmRow = {
   kontak: string | null;
   alamat: string | null;
   image_url: string | null;
+  maps_url: string | null;
 };
 
 async function getAllUmkm(): Promise<UmkmRow[]> {
@@ -76,7 +81,7 @@ async function getAllUmkm(): Promise<UmkmRow[]> {
     const supabase = await createClient();
     const { data } = await supabase
       .from("umkm")
-      .select("id, nama, pemilik, kategori, deskripsi, produk, kontak, alamat, image_url")
+      .select("id, nama, pemilik, kategori, deskripsi, produk, kontak, alamat, image_url, maps_url")
       .order("created_at", { ascending: false });
 
     if (data && data.length > 0) return data;
@@ -258,6 +263,19 @@ export default async function UmkmPublicPage() {
                             phone
                           </span>
                           {umkm.kontak}
+                        </a>
+                      )}
+                      {umkm.maps_url && (
+                        <a
+                          href={umkm.maps_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-sm text-secondary font-semibold hover:underline"
+                        >
+                          <span className="material-symbols-outlined text-[16px]">
+                            map
+                          </span>
+                          Buka di Google Maps
                         </a>
                       )}
                     </div>

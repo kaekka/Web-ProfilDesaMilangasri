@@ -14,6 +14,7 @@ interface UmkmFormProps {
     kontak?: string;
     alamat?: string;
     image_url?: string;
+    maps_url?: string;
   };
   submitLabel?: string;
   backHref?: string;
@@ -203,6 +204,27 @@ export default function UmkmForm({
               placeholder="/images/umkm/nama-file.jpg"
               className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface text-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition"
             />
+          </div>
+
+          {/* Google Maps URL */}
+          <div>
+            <label
+              htmlFor="umkm-maps-url"
+              className="block text-sm font-semibold text-on-surface mb-1.5"
+            >
+              Link Google Maps
+            </label>
+            <input
+              id="umkm-maps-url"
+              name="maps_url"
+              type="url"
+              defaultValue={defaultValues.maps_url}
+              placeholder="https://maps.google.com/?q=..."
+              className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface text-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition"
+            />
+            <p className="text-xs text-on-surface-variant mt-1">
+              Salin link dari Google Maps → Share → Copy link
+            </p>
           </div>
 
           {/* Actions */}
