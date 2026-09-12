@@ -41,7 +41,7 @@ export default function Footer() {
                                     name="apartment"
                                     className="text-[18px] shrink-0 mt-0.5"
                                 />
-                                <span>Balai Desa: Jl. Raya Panekan - Milangasri Km 2</span>
+                                <span>Balai Desa: Jl. Raya MAY. JEND. Sukowati No.35, Waru Kulon, Milangasri, Panekan, Kabupaten Magetan, Jawa Timur 63352</span>
                             </div>
                         </div>
                     </div>
