@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState, useTransition } from "react";
+import { useActionState, useState, startTransition } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import imageCompression from "browser-image-compression";
@@ -38,7 +38,7 @@ export default function BeritaForm({
   backHref = "/admin/berita",
 }: BeritaFormProps) {
   const [state, formAction, isPending] = useActionState(action, null);
-  const [isCompressing, startCompressing] = useTransition();
+  const [isCompressing, setIsCompressing] = useState(false);
   const [preview, setPreview] = useState(defaultValues?.image_url || "");
 
   const pending = isPending || isCompressing;
@@ -51,30 +51,31 @@ export default function BeritaForm({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const file = formData.get("image") as File;
 
     if (file && file.size > 0) {
-      startCompressing(async () => {
-        try {
-          const compressedFile = await imageCompression(file, {
-            maxSizeMB: 3,
-            maxWidthOrHeight: 1920,
-            useWebWorker: true,
-          });
-          // Replace the original file with the compressed one
-          formData.set("image", compressedFile, compressedFile.name);
-        } catch (error) {
-          console.error("Error compressing image:", error);
-        }
-        formAction(formData);
-      });
-    } else {
-      // No file selected, proceed normally
-      formAction(formData);
+      setIsCompressing(true);
+      try {
+        const compressedFile = await imageCompression(file, {
+          maxSizeMB: 3,
+          maxWidthOrHeight: 1920,
+          useWebWorker: true,
+        });
+        // Replace the original file with the compressed one
+        formData.set("image", compressedFile, compressedFile.name);
+      } catch (error) {
+        console.error("Error compressing image:", error);
+      } finally {
+        setIsCompressing(false);
+      }
     }
+    
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   return (
