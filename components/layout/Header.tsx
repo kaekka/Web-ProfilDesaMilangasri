@@ -40,7 +40,7 @@ export default function Header() {
 
         const handleScroll = () => {
             const scrollPosition = window.scrollY + 140; // Offset for fixed header
-            
+
             // Check if user scrolled near bottom of the page
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
                 setActiveSection("kontak");
@@ -133,11 +133,10 @@ export default function Header() {
 
                         <Link
                             ref={(el) => { itemRefs.current["profil"] = el; }}
-                            className={`relative z-10 px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 ${
-                                activeSection === "profil"
+                            className={`relative z-10 px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 ${activeSection === "profil"
                                     ? "text-white font-semibold"
                                     : "text-on-surface-variant hover:text-primary"
-                            }`}
+                                }`}
                             href="/"
                         >
                             <span>Profil Desa</span>
@@ -145,11 +144,10 @@ export default function Header() {
 
                         <Link
                             ref={(el) => { itemRefs.current["berita"] = el; }}
-                            className={`relative z-10 px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 ${
-                                activeSection === "berita"
+                            className={`relative z-10 px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 ${activeSection === "berita"
                                     ? "text-white font-semibold"
                                     : "text-on-surface-variant hover:text-primary"
-                            }`}
+                                }`}
                             href="/#berita"
                         >
                             <span>Berita</span>
@@ -161,19 +159,17 @@ export default function Header() {
                             className="relative group z-10"
                         >
                             <button
-                                className={`px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 flex items-center gap-1 cursor-pointer ${
-                                    activeSection === "potensi"
+                                className={`px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 flex items-center gap-1 cursor-pointer ${activeSection === "potensi"
                                         ? "text-white font-semibold"
                                         : "text-on-surface-variant hover:text-primary"
-                                }`}
+                                    }`}
                                 type="button"
                             >
                                 <span>Potensi Desa</span>
                                 <MaterialIcon
                                     name="arrow_drop_down"
-                                    className={`text-[18px] transition-transform duration-200 group-hover:rotate-180 ${
-                                        activeSection === "potensi" ? "text-white" : ""
-                                    }`}
+                                    className={`text-[18px] transition-transform duration-200 group-hover:rotate-180 ${activeSection === "potensi" ? "text-white" : ""
+                                        }`}
                                 />
                             </button>
                             <div className="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[190px] pt-2">
@@ -187,16 +183,6 @@ export default function Header() {
                                             className="text-[18px] text-secondary"
                                         />
                                         <span>UMKM</span>
-                                    </Link>
-                                    <Link
-                                        className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
-                                        href="/#umkm"
-                                    >
-                                        <MaterialIcon
-                                            name="local_florist"
-                                            className="text-[18px] text-primary"
-                                        />
-                                        <span>Produk Lokal</span>
                                     </Link>
                                     <Link
                                         className="px-4 py-2.5 text-left font-medium text-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-xl flex items-center gap-2"
@@ -214,11 +200,10 @@ export default function Header() {
 
                         <Link
                             ref={(el) => { itemRefs.current["kontak"] = el; }}
-                            className={`relative z-10 px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 ${
-                                activeSection === "kontak"
+                            className={`relative z-10 px-5 py-2 rounded-full font-medium text-sm transition-colors duration-200 ${activeSection === "kontak"
                                     ? "text-white font-semibold"
                                     : "text-on-surface-variant hover:text-primary"
-                            }`}
+                                }`}
                             href="/#kontak"
                         >
                             <span>Kontak</span>
@@ -228,11 +213,10 @@ export default function Header() {
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">
                         <Link
-                            className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm ${
-                                pathname === "/about"
+                            className={`hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-sm ${pathname === "/about"
                                     ? "bg-primary text-white"
                                     : "bg-primary-container text-on-primary-container hover:bg-primary hover:text-white"
-                            }`}
+                                }`}
                             href="/about"
                         >
                             <MaterialIcon name="info" className="text-[18px]" />
