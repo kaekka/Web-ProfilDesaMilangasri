@@ -12,36 +12,6 @@ interface UmkmItem {
   image: string;
 }
 
-const STATIC_UMKM: UmkmItem[] = [
-  {
-    name: "Keripik Pisang Tanduk",
-    location: "Dusun 3, Milangasri",
-    badge: "Best Seller",
-    badgeClass: "bg-tertiary-fixed text-on-tertiary-fixed",
-    image: "/images/umkm/keripik-pisang.jpg",
-  },
-  {
-    name: "Sayur Organik Lereng Lawu",
-    location: "Dusun Tirta, Milangasri",
-    badge: "Panen Segar",
-    badgeClass: "bg-secondary-fixed text-on-secondary-container",
-    image: "/images/umkm/sayur-organik.jpg",
-  },
-  {
-    name: "Madu Murni Lereng Lawu",
-    location: "Dusun Hutan, Milangasri",
-    badge: "100% Murni",
-    badgeClass: "bg-primary-fixed text-on-primary-fixed",
-    image: "/images/umkm/madu-murni.jpg",
-  },
-  {
-    name: "Kerajinan Anyaman Bambu",
-    location: "Dusun Krajan, Milangasri",
-    badge: "Kriya Warga",
-    badgeClass: "bg-surface-container-lowest text-primary",
-    image: "/images/umkm/anyaman-bambu.jpg",
-  },
-];
 
 const BADGE_CLASSES = [
   "bg-tertiary-fixed text-on-tertiary-fixed",
@@ -70,9 +40,9 @@ async function getAllUmkm(): Promise<UmkmItem[]> {
       }));
     }
   } catch {
-    // Supabase unavailable — use static data
+    console.error("Supabase unavailable");
   }
-  return STATIC_UMKM;
+  return [];
 }
 
 export default async function UMKMSection() {

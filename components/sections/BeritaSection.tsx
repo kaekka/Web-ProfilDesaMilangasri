@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import MaterialIcon from "@/components/icons/MaterialIcon";
-import { ARTICLES } from "@/lib/articles";
 import { createClient } from "@/utils/supabase/server";
 
-// Merge DB berita + static fallback, deduplicate by slug
+// Fetch DB berita
 async function getAllBerita() {
   try {
     const supabase = await createClient();
@@ -15,10 +14,7 @@ async function getAllBerita() {
       .limit(4);
 
     if (data && data.length > 0) {
-      // Map DB columns to Article shape, then merge with static (DB takes priority)
-      const dbSlugs = new Set(data.map((b) => b.slug));
-      const staticFallback = ARTICLES.filter((a) => !dbSlugs.has(a.slug));
-      const dbMapped = data.map((b) => ({
+      return data.map((b) => ({
         slug: b.slug,
         title: b.title,
         description: b.description ?? "",
@@ -28,12 +24,11 @@ async function getAllBerita() {
         image: b.image_url ?? "/images/berita/bantuan-digitalisasi.jpg",
         alt: b.alt ?? b.title,
       }));
-      return [...dbMapped, ...staticFallback].slice(0, 4);
     }
   } catch {
-    // Supabase unavailable — fall back to static
+    console.error("Supabase unavailable");
   }
-  return ARTICLES.slice(0, 4);
+  return [];
 }
 
 export default async function BeritaSection() {

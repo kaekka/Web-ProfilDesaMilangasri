@@ -12,56 +12,7 @@ export const metadata: Metadata = {
     "Daftar lengkap Usaha Mikro, Kecil, dan Menengah (UMKM) Desa Milangasri, Kecamatan Panekan, Kabupaten Magetan. Temukan produk lokal unggulan lereng Gunung Lawu.",
 };
 
-const STATIC_UMKM = [
-  {
-    id: "static-1",
-    nama: "Keripik Pisang Tanduk",
-    pemilik: null,
-    kategori: "Kuliner & Makanan",
-    deskripsi: "Keripik pisang tanduk renyah khas lereng Gunung Lawu.",
-    produk: "Keripik Pisang Tanduk",
-    kontak: null,
-    alamat: "Dusun 3, Milangasri",
-    image_url: "/images/umkm/keripik-pisang.jpg",
-    maps_url: null,
-  },
-  {
-    id: "static-2",
-    nama: "Sayur Organik Lereng Lawu",
-    pemilik: null,
-    kategori: "Pertanian & Perkebunan",
-    deskripsi: "Sayuran organik segar dipetik dari kebun pekarangan warga.",
-    produk: "Sayuran Organik",
-    kontak: null,
-    alamat: "Dusun Tirta, Milangasri",
-    image_url: "/images/umkm/sayur-organik.jpg",
-    maps_url: null,
-  },
-  {
-    id: "static-3",
-    nama: "Madu Murni Lereng Lawu",
-    pemilik: null,
-    kategori: "Pertanian & Perkebunan",
-    deskripsi: "Madu murni alami dari lebah liar lereng Gunung Lawu.",
-    produk: "Madu Murni",
-    kontak: null,
-    alamat: "Dusun Hutan, Milangasri",
-    image_url: "/images/umkm/madu-murni.jpg",
-    maps_url: null,
-  },
-  {
-    id: "static-4",
-    nama: "Kerajinan Anyaman Bambu",
-    pemilik: null,
-    kategori: "Kerajinan Tangan",
-    deskripsi: "Kerajinan anyaman bambu tradisional buatan warga Milangasri.",
-    produk: "Anyaman Bambu",
-    kontak: null,
-    alamat: "Dusun Krajan, Milangasri",
-    image_url: "/images/umkm/anyaman-bambu.jpg",
-    maps_url: null,
-  },
-];
+
 
 type UmkmRow = {
   id: string;
@@ -86,9 +37,9 @@ async function getAllUmkm(): Promise<UmkmRow[]> {
 
     if (data && data.length > 0) return data;
   } catch {
-    // fallback
+    console.error("Supabase unavailable");
   }
-  return STATIC_UMKM;
+  return [];
 }
 
 const KATEGORI_COLORS: Record<string, string> = {

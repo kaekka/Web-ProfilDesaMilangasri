@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ARTICLES, getArticleBySlug } from "@/lib/articles";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -45,24 +44,10 @@ async function getArticle(slug: string): Promise<ArticleData | null> {
       };
     }
   } catch {
-    // DB unavailable, fall through to static
-  }
-
-  // 2. Fallback to static data
-  const staticArticle = getArticleBySlug(slug);
-  if (staticArticle) {
-    return {
-      ...staticArticle,
-      image: staticArticle.image,
-    };
+    console.error("Supabase unavailable");
   }
 
   return null;
-}
-
-export async function generateStaticParams() {
-  // Pre-render static slugs at build time; DB slugs resolved dynamically
-  return ARTICLES.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ARTICLES } from "@/lib/articles";
 import { createClient } from "@/utils/supabase/server";
 
 export const metadata: Metadata = {
@@ -33,8 +32,7 @@ async function getAllBerita(): Promise<ArticleItem[]> {
       .order("created_at", { ascending: false });
 
     if (data && data.length > 0) {
-      const dbSlugs = new Set(data.map((b) => b.slug));
-      const dbItems: ArticleItem[] = data.map((b) => ({
+      return data.map((b) => ({
         slug: b.slug,
         title: b.title,
         description: b.description ?? "",
@@ -44,17 +42,11 @@ async function getAllBerita(): Promise<ArticleItem[]> {
         image: b.image_url ?? "/images/berita/bantuan-digitalisasi.jpg",
         alt: b.alt ?? b.title,
       }));
-      // Append static articles not already in DB
-      const staticExtra = ARTICLES.filter((a) => !dbSlugs.has(a.slug)).map((a) => ({
-        ...a,
-        image: a.image,
-      }));
-      return [...dbItems, ...staticExtra];
     }
   } catch {
-    // fallback
+    console.error("Supabase unavailable");
   }
-  return ARTICLES.map((a) => ({ ...a, image: a.image }));
+  return [];
 }
 
 export default async function BeritaArchivePage() {
