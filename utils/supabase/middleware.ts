@@ -18,7 +18,11 @@ export const updateSession = async (request: NextRequest) => {
         );
         supabaseResponse = NextResponse.next({ request });
         cookiesToSet.forEach(({ name, value, options }) =>
-          supabaseResponse.cookies.set(name, value, options)
+          supabaseResponse.cookies.set(name, value, {
+            ...options,
+            sameSite: "strict",
+            secure: process.env.NODE_ENV === "production",
+          })
         );
       },
     },
@@ -45,6 +49,11 @@ export const updateSession = async (request: NextRequest) => {
     dashboardUrl.pathname = "/admin";
     return NextResponse.redirect(dashboardUrl);
   }
+
+  // Security Headers
+  supabaseResponse.headers.set("X-Frame-Options", "DENY");
+  supabaseResponse.headers.set("X-Content-Type-Options", "nosniff");
+  supabaseResponse.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
   return supabaseResponse;
 };

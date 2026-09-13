@@ -1,21 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { loginAction } from "./actions";
-import type { Metadata } from "next";
 import Image from "next/image";
+import MathCaptcha from "@/components/ui/MathCaptcha";
 
-// Metadata cannot be exported from client component, handled by parent
 export default function AdminLoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [captchaExpected, setCaptchaExpected] = useState<number | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Called by MathCaptcha when answer is correct or reset
+  const handleCaptchaVerified = useCallback((verified: boolean, expected?: number) => {
+    setCaptchaVerified(verified);
+    if (verified && expected !== undefined) {
+      setCaptchaExpected(expected);
+    } else {
+      setCaptchaExpected(null);
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!captchaVerified) {
+      setError("Selesaikan verifikasi keamanan terlebih dahulu.");
+      return;
+    }
     setLoading(true);
     setError(null);
 
     const formData = new FormData(e.currentTarget);
+    // Inject the expected answer for server-side verification
+    if (captchaExpected !== null) {
+      formData.set("captcha-expected", String(captchaExpected));
+    }
+
     const result = await loginAction(formData);
 
     if (result?.error) {
@@ -25,8 +46,10 @@ export default function AdminLoginPage() {
           : result.error
       );
       setLoading(false);
+      // Reset captcha after failed attempt
+      setCaptchaVerified(false);
+      setCaptchaExpected(null);
     }
-    // On success, loginAction redirects — no need to handle here
   }
 
   return (
@@ -35,6 +58,7 @@ export default function AdminLoginPage() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full bg-white/3 blur-2xl" />
       </div>
 
       <div className="w-full max-w-md relative">
@@ -56,10 +80,25 @@ export default function AdminLoginPage() {
             <p className="text-on-surface-variant text-sm mt-1 text-center">
               Website Resmi Desa Milangasri
             </p>
+
+            {/* Security badge */}
+            <div className="mt-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 border border-green-200">
+              <span className="material-symbols-outlined text-[14px] text-green-600">
+                shield
+              </span>
+              <span className="text-xs text-green-700 font-semibold">
+                Koneksi Aman & Terproteksi
+              </span>
+            </div>
           </div>
 
           {/* Form */}
-          <form id="admin-login-form" onSubmit={handleSubmit} className="space-y-5">
+          <form
+            id="admin-login-form"
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="space-y-5"
+          >
             {/* Error alert */}
             {error && (
               <div className="flex items-start gap-3 bg-error-container text-on-error-container rounded-xl px-4 py-3 text-sm font-medium">
@@ -118,12 +157,17 @@ export default function AdminLoginPage() {
               </div>
             </div>
 
+            {/* Math CAPTCHA */}
+            <div className="pt-1">
+              <MathCaptcha onVerified={handleCaptchaVerified} />
+            </div>
+
             {/* Submit */}
             <button
               id="admin-login-submit"
               type="submit"
-              disabled={loading}
-              className="w-full py-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-sm transition-all duration-200 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2"
+              disabled={loading || !captchaVerified}
+              className="w-full py-3 rounded-xl bg-primary hover:bg-primary-container text-white font-bold text-sm transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2"
             >
               {loading ? (
                 <>
@@ -141,6 +185,12 @@ export default function AdminLoginPage() {
                 </>
               )}
             </button>
+
+            {!captchaVerified && !loading && (
+              <p className="text-center text-xs text-on-surface-variant">
+                Selesaikan verifikasi di atas untuk mengaktifkan tombol masuk
+              </p>
+            )}
           </form>
 
           <p className="mt-6 text-center text-xs text-on-surface-variant">
