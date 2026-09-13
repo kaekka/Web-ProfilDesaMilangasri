@@ -92,13 +92,6 @@ export default async function UMKMSection() {
                 <MaterialIcon name="store" className="text-[18px]" />
                 <span>Lihat Semua UMKM</span>
               </Link>
-              <a
-                className="px-5 py-2.5 rounded-full border border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-colors inline-flex items-center gap-2"
-                href="#kontak"
-              >
-                <MaterialIcon name="phone_in_talk" className="text-[18px]" />
-                <span>Hubungi BUMDes</span>
-              </a>
             </div>
           </div>
           <div className="relative z-10 w-full md:w-80 h-48 md:h-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
