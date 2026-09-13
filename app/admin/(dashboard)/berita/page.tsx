@@ -12,7 +12,7 @@ export default async function AdminBeritaPage() {
   const { data: beritaList, error } = await supabase
     .from("berita")
     .select("id, title, category, date, slug")
-    .order("created_at", { ascending: false });
+    .order("updated_at", { ascending: false });
 
   return (
     <div className="p-6 lg:p-10 max-w-5xl mx-auto">

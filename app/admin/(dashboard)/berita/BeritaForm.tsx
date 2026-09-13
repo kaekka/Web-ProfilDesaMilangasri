@@ -41,6 +41,30 @@ export default function BeritaForm({
   const [isCompressing, setIsCompressing] = useState(false);
   const [preview, setPreview] = useState(defaultValues?.image_url || "");
 
+  // Date picker state — simpan nilai ISO (YYYY-MM-DD) untuk input[type=date]
+  // Format yang disimpan ke DB tetap dalam format Indonesia (e.g. "13 Sep 2026")
+  const parseDefaultDate = (dateStr?: string): string => {
+    if (!dateStr) return "";
+    // Jika sudah format ISO, langsung kembalikan
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return dateStr;
+    // Jika format Indonesia (e.g. "13 Agu 2026"), convert ke ISO
+    try {
+      const parsed = new Date(dateStr);
+      if (!isNaN(parsed.getTime())) {
+        return parsed.toISOString().slice(0, 10);
+      }
+    } catch {}
+    return "";
+  };
+  const [dateISO, setDateISO] = useState<string>(parseDefaultDate(defaultValues?.date));
+
+  const formatDateIndonesia = (isoDate: string): string => {
+    if (!isoDate) return "";
+    const months = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+    const [year, month, day] = isoDate.split("-");
+    return `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
+  };
+
   const pending = isPending || isCompressing;
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -181,14 +205,24 @@ export default function BeritaForm({
             >
               Tanggal Tampil
             </label>
+            {/* Hidden input kirim format Indonesia ke server */}
+            <input
+              type="hidden"
+              name="date"
+              value={formatDateIndonesia(dateISO)}
+            />
             <input
               id="berita-date"
-              name="date"
-              type="text"
-              defaultValue={defaultValues.date}
-              placeholder="cth: 17 Agu 2026"
-              className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface text-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+              type="date"
+              value={dateISO}
+              onChange={(e) => setDateISO(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition cursor-pointer"
             />
+            {dateISO && (
+              <p className="text-xs text-on-surface-variant mt-1">
+                Akan ditampilkan sebagai: <span className="font-semibold">{formatDateIndonesia(dateISO)}</span>
+              </p>
+            )}
           </div>
 
           {/* Image Upload */}

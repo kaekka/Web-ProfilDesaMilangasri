@@ -12,7 +12,7 @@ export default async function AdminUmkmPage() {
   const { data: umkmList, error } = await supabase
     .from("umkm")
     .select("id, nama, pemilik, kategori, kontak")
-    .order("created_at", { ascending: false });
+    .order("updated_at", { ascending: false });
 
   return (
     <div className="p-6 lg:p-10 max-w-5xl mx-auto">
