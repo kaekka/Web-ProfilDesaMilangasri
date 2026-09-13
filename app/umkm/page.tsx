@@ -33,7 +33,7 @@ async function getAllUmkm(): Promise<UmkmRow[]> {
     const { data } = await supabase
       .from("umkm")
       .select("id, nama, pemilik, kategori, deskripsi, produk, kontak, alamat, image_url, maps_url")
-      .order("created_at", { ascending: false });
+      .order("updated_at", { ascending: false });
 
     if (data && data.length > 0) return data;
   } catch {

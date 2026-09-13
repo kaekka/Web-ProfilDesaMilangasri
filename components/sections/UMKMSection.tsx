@@ -26,7 +26,7 @@ async function getAllUmkm(): Promise<UmkmItem[]> {
     const { data } = await supabase
       .from("umkm")
       .select("id, nama, alamat, kategori, image_url")
-      .order("created_at", { ascending: false })
+      .order("updated_at", { ascending: false })
       .limit(4);
 
     if (data && data.length > 0) {

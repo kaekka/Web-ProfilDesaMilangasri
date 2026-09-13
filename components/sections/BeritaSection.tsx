@@ -10,7 +10,7 @@ async function getAllBerita() {
     const { data } = await supabase
       .from("berita")
       .select("slug, title, description, category, date, image_url, alt")
-      .order("created_at", { ascending: false })
+      .order("updated_at", { ascending: false })
       .limit(4);
 
     if (data && data.length > 0) {

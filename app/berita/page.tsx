@@ -29,7 +29,7 @@ async function getAllBerita(): Promise<ArticleItem[]> {
     const { data } = await supabase
       .from("berita")
       .select("slug, title, description, category, date, image_url, alt")
-      .order("created_at", { ascending: false });
+      .order("updated_at", { ascending: false });
 
     if (data && data.length > 0) {
       return data.map((b) => ({
