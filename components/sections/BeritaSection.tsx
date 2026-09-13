@@ -1,9 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import MaterialIcon from "@/components/icons/MaterialIcon";
-import { ARTICLES } from "@/lib/articles";
+import { createClient } from "@/utils/supabase/server";
 
-export default function BeritaSection() {
+// Fetch DB berita
+async function getAllBerita() {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("berita")
+      .select("slug, title, description, category, date, image_url, alt")
+      .order("updated_at", { ascending: false })
+      .limit(4);
+
+    if (data && data.length > 0) {
+      return data.map((b) => ({
+        slug: b.slug,
+        title: b.title,
+        description: b.description ?? "",
+        category: b.category ?? "",
+        categoryColor: "text-primary",
+        date: b.date ?? "",
+        image: b.image_url ?? "/images/berita/bantuan-digitalisasi.jpg",
+        alt: b.alt ?? b.title,
+      }));
+    }
+  } catch {
+    console.error("Supabase unavailable");
+  }
+  return [];
+}
+
+export default async function BeritaSection() {
+  const articles = await getAllBerita();
+
   return (
     <section className="w-full bg-surface py-16 md:py-24 relative" id="berita">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
@@ -23,19 +53,19 @@ export default function BeritaSection() {
             </p>
           </div>
           <div>
-            <a
+            <Link
               className="px-5 py-2.5 rounded-full text-sm font-semibold bg-primary text-white shadow-sm hover:bg-primary-container transition-all inline-flex items-center gap-2"
-              href="#"
+              href="/berita"
             >
               <span>Arsip Berita Lengkap</span>
               <MaterialIcon name="arrow_forward" className="text-[18px]" />
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Article Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {ARTICLES.map((article) => (
+          {articles.map((article) => (
             <Link
               key={article.slug}
               href={`/berita/${article.slug}`}
