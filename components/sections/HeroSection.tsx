@@ -42,15 +42,12 @@ export default function HeroSection() {
           DESA MILANGASRI
         </h1>
         <p className="text-xl md:text-2xl text-primary-fixed font-semibold mt-3 max-w-2xl">
-          Pesona Harmoni di Kaki Gunung Lawu
+          Gerbang Strategis & Pusat Keberlanjutan Magetan
         </p>
 
         {/* Description */}
         <p className="text-base md:text-lg text-white/85 max-w-3xl mt-5 leading-relaxed font-normal">
-          Menghidupkan kemakmuran agraris di ketinggian 840 meter. Diberkahi
-          kesegaran 12 mata air vulkanis abadi, hamparan terasering hijau subur,
-          dan kehangatan gotong royong warga lereng timur Gunung Lawu, Kecamatan
-          Panekan, Magetan.
+          Berdiri kokoh sebagai wilayah transisi strategis, kami memadukan dinamisme gerbang ekonomi, produktivitas pertanian dataran rendah, dan tanggung jawab pengelolaan lingkungan demi masa depan Magetan yang hijau dan berkelanjutan.
         </p>
 
         {/* CTAs */}
