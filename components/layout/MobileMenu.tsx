@@ -13,7 +13,6 @@ const NAV_LINKS = [
 
 const POTENSI_LINKS = [
     { label: "UMKM", href: "/#umkm", icon: "storefront", color: "text-secondary" },
-    { label: "Produk Lokal", href: "/#umkm", icon: "local_florist", color: "text-primary" },
     { label: "Geografi", href: "/#geografi", icon: "explore", color: "text-tertiary" },
 ];
 
