@@ -2,10 +2,10 @@ import Image from "next/image";
 import MaterialIcon from "@/components/icons/MaterialIcon";
 
 const STATS = [
-  { icon: "groups", value: "4.820+", label: "Warga Harmonis" },
-  { icon: "holiday_village", value: "8 Dusun", label: "Rukun Wilayah" },
-  { icon: "water_drop", value: "12 Mata Air", label: "Sumber Alami" },
-  { icon: "eco", value: "100% Organik", label: "Lahan Pangan Subur" },
+  { icon: "groups", value: "2.124", label: "Keluarga Harmonis" },
+  { icon: "cottage", value: "4 RW", label: "Rukun Warga" },
+  { icon: "holiday_village", value: "45 RT", label: "Rukun Tetangga" },
+  { icon: "map", value: "-", label: "Luas Wilayah" },
 ];
 
 export default function HeroSection() {
