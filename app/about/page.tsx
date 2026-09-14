@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="w-full pt-20 min-h-screen bg-background">
+      <main className="w-full pt-20 min-h-screen bg-surface">
         <AboutUsSection />
       </main>
       <Footer />

@@ -61,9 +61,20 @@ export default async function UmkmPublicPage() {
       <Header />
       <main className="w-full pt-20">
         {/* Hero Banner */}
-        <section className="relative w-full bg-gradient-to-br from-secondary via-secondary to-secondary-container py-16 md:py-24 overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/5" />
-          <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-white/5" />
+        <section className="relative w-full bg-primary py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/gunglawumilangasri.jpeg"
+              alt="Pemandangan Gunung Lawu dari Desa Milangasri"
+              fill
+              className="object-cover opacity-85"
+              priority
+              quality={90}
+            />
+          </div>
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-primary/35 to-primary/85" />
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/10 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed/10 blur-[120px] pointer-events-none" />
 
           <div className="max-w-[1200px] mx-auto px-4 md:px-6 relative z-10">
             <nav className="flex items-center gap-2 text-white/70 text-sm mb-6">

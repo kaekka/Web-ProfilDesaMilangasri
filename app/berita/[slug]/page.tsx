@@ -78,49 +78,70 @@ export default async function BeritaDetailPage({
   return (
     <>
       <Header />
-      <main className="w-full pt-20">
-        <article className="max-w-[800px] mx-auto px-4 md:px-6 py-12 md:py-20">
-          {/* Back links */}
-          <div className="flex items-center gap-3 mb-8 flex-wrap">
-            <Link
-              href="/#berita"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-container transition-colors"
-            >
-              <MaterialIcon name="arrow_back" className="text-[18px]" />
-              <span>Beranda</span>
-            </Link>
-            <span className="text-on-surface-variant/40">|</span>
-            <Link
-              href="/berita"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-container transition-colors"
-            >
-              <MaterialIcon name="newspaper" className="text-[18px]" />
-              <span>Arsip Berita</span>
-            </Link>
+      <main className="w-full pt-20 bg-surface">
+        {/* Hero Banner */}
+        <section className="relative w-full bg-primary py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/gunglawumilangasri.jpeg"
+              alt="Pemandangan Gunung Lawu dari Desa Milangasri"
+              fill
+              className="object-cover opacity-85"
+              priority
+              quality={90}
+            />
           </div>
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-primary/35 to-primary/85" />
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/10 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed/10 blur-[120px] pointer-events-none" />
 
-          {/* Category & Date */}
-          <div className="flex items-center gap-3 mb-4 flex-wrap">
-            {article.category && (
-              <span
-                className={`px-3 py-1 rounded-full bg-surface-container text-xs ${article.categoryColor} font-bold`}
+          <div className="max-w-[1200px] mx-auto px-4 md:px-6 relative z-10">
+            <nav className="flex items-center gap-2 text-white/70 text-sm mb-6">
+              <Link
+                href="/"
+                className="hover:text-white transition-colors inline-flex items-center gap-1"
               >
-                {article.category}
-              </span>
-            )}
-            {article.date && (
-              <div className="flex items-center gap-1.5 text-on-surface-variant text-xs">
-                <MaterialIcon name="calendar_month" className="text-[16px]" />
-                <span>{article.date}</span>
-              </div>
-            )}
+                <MaterialIcon name="home" className="text-[16px]" />
+                <span>Beranda</span>
+              </Link>
+              <MaterialIcon name="chevron_right" className="text-[16px]" />
+              <Link
+                href="/berita"
+                className="hover:text-white transition-colors"
+              >
+                Arsip Berita
+              </Link>
+              <MaterialIcon name="chevron_right" className="text-[16px]" />
+              <span className="text-white font-semibold line-clamp-1">{article.title}</span>
+            </nav>
+
+            <div className="flex items-center gap-2 text-white/80 font-bold text-xs uppercase tracking-wider mb-3">
+              <MaterialIcon
+                name="newspaper"
+                className="text-[18px] text-tertiary-fixed"
+              />
+              <span>Berita Desa</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
+              {article.title}
+            </h1>
+            <div className="flex items-center gap-3 mt-4 flex-wrap">
+              {article.category && (
+                <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-xs text-white font-bold border border-white/20">
+                  {article.category}
+                </span>
+              )}
+              {article.date && (
+                <div className="flex items-center gap-1.5 text-white/70 text-xs">
+                  <MaterialIcon name="calendar_month" className="text-[16px]" />
+                  <span>{article.date}</span>
+                </div>
+              )}
+            </div>
           </div>
+        </section>
 
-          {/* Title */}
-          <h1 className="text-2xl md:text-4xl font-extrabold text-on-surface leading-tight mb-6">
-            {article.title}
-          </h1>
-
+        <article className="max-w-[800px] mx-auto px-4 md:px-6 py-12 md:py-20">
           {/* Hero Image */}
           <div className="relative w-full h-64 md:h-[420px] rounded-3xl overflow-hidden mb-8 bg-slate-100">
             <Image
