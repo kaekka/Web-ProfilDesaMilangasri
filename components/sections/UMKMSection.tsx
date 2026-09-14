@@ -136,17 +136,6 @@ export default async function UMKMSection() {
             </div>
           ))}
         </div>
-
-        {/* See all link */}
-        <div className="text-center mt-10">
-          <Link
-            href="/umkm"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-white font-bold text-sm hover:bg-secondary-container transition-colors shadow-sm hover:shadow-md"
-          >
-            <span>Lihat Semua UMKM</span>
-            <MaterialIcon name="arrow_forward" className="text-[18px]" />
-          </Link>
-        </div>
       </div>
     </section>
   );

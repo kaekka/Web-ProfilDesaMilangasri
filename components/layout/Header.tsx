@@ -30,6 +30,18 @@ export default function Header() {
             return;
         }
 
+        // Berita pages → highlight "berita"
+        if (pathname === "/berita" || pathname.startsWith("/berita/")) {
+            setActiveSection("berita");
+            return;
+        }
+
+        // UMKM page → highlight "potensi"
+        if (pathname === "/umkm" || pathname.startsWith("/umkm/")) {
+            setActiveSection("potensi");
+            return;
+        }
+
         const sections = [
             { id: "profil", key: "profil" },
             { id: "berita", key: "berita" },
