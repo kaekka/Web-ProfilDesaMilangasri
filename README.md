@@ -25,7 +25,7 @@ Berikut adalah informasi letak geografis dan administratif Desa Milangasri:
 | **Kecamatan** | [isi data] |
 | **Kabupaten** | Magetan |
 | **Provinsi** | Jawa Timur |
-| **Kode Pos** | [isi data] |
+| **Kode Pos** | 63352 |
 | **Koordinat** | [isi data] |
 | **Google Maps** | [link] |
 
