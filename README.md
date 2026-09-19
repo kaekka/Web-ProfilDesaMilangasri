@@ -22,11 +22,11 @@ Berikut adalah informasi letak geografis dan administratif Desa Milangasri:
 | Keterangan | Detail |
 | :--- | :--- |
 | **Desa** | Milangasri |
-| **Kecamatan** | [isi data] |
+| **Kecamatan** | Panekan |
 | **Kabupaten** | Magetan |
 | **Provinsi** | Jawa Timur |
 | **Kode Pos** | 63352 |
-| **Koordinat** | [isi data] |
+| **Koordinat** | 7°37′41″S 111°20′25″E |
 | **Google Maps** | [link] |
 
 ---
@@ -34,12 +34,11 @@ Berikut adalah informasi letak geografis dan administratif Desa Milangasri:
 ## 🌾 Potensi Desa
 Desa Milangasri terus berupaya mengoptimalkan berbagai sektor unggulan untuk kemajuan ekonomi dan kesejahteraan warganya.
 
-*   **🌱 Pertanian:** [isi data deskripsi potensi pertanian, misal: komoditas utama, luas lahan, sistem irigasi].
-*   **🏞️ Wisata & Lingkungan:** [isi data deskripsi potensi wisata atau keasrian lingkungan desa].
-*   **🏪 UMKM:** [isi data deskripsi perkembangan sektor usaha mikro, kecil, dan menengah di desa].
-*   **🎨 Kebudayaan:** [isi data deskripsi warisan seni dan budaya lokal yang masih dilestarikan].
-*   **👥 Sumber Daya Manusia:** [isi data deskripsi keahlian, demografi produktif, atau komunitas warga yang aktif].
-*   **💡 Ekonomi Kreatif:** [isi data deskripsi inisiatif kreatif warga atau pemuda desa].
+*   **🌱 Pertanian:** Sektor pertanian didominasi oleh tanaman pangan utama seperti padi dan jagung, didukung oleh kondisi lahan subur di lereng Gunung Lawu dengan sistem irigasi teknis yang terjaga.
+*   **🏪 UMKM:** Didominasi oleh usaha kuliner lokal, olahan makanan ringan, serta unit usaha kuliner masyarakat seperti pusat angkringan BUMDes yang menjadi sarana pemberdayaan ekonomi warga.
+*   **🎨 Kebudayaan:** Pelestarian tradisi lokal dan kesenian daerah khas Magetan seperti reog, jaranan, serta tradisi bersih desa yang diselenggarakan secara rutin oleh masyarakat setempat.
+*   **👥 Sumber Daya Manusia:** Didominasi oleh tenaga kerja usia produktif, kelompok tani yang aktif, serta peran generasi muda yang tergabung dalam karang taruna dan penggerak ekonomi desa.
+*   **💡 Ekonomi Kreatif:** Inisiatif pemuda dan kaum milenial desa dalam mengelola pusat jajanan/angkringan kreatif BUMDes di area lapangan desa sebagai tempat kumpul warga sekaligus penggerak Pendapatan Asli Desa (PADes).
 
 ---
 
