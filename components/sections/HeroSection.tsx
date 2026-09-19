@@ -68,7 +68,9 @@ export default function HeroSection() {
           </a>
           <a
             className="px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white font-semibold text-base border border-white/20 transition-all duration-200 flex items-center gap-2"
-            href="#geografi"
+            href="https://youtu.be/t_LJtjVWBhc?si=D9ARPsQ53XIPiHkI"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <MaterialIcon
               name="play_circle"
