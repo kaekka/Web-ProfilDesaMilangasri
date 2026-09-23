@@ -214,8 +214,7 @@ export default function KontakSection() {
             <div className="flex-1 rounded-2xl bg-gradient-to-br from-primary-fixed/40 to-tertiary-fixed/30 border border-primary-fixed/50 p-5 flex flex-col justify-center gap-2">
               <MaterialIcon name="format_quote" className="text-[28px] text-primary/50" />
               <p className="text-on-surface font-semibold text-sm leading-relaxed">
-                Bersama membangun desa yang maju, mandiri, dan sejahtera untuk
-                generasi Milangasri yang lebih baik.
+                Bersama Milangasri Membangun Indonesia dari Tepian Desa.
               </p>
               <p className="text-xs text-on-surface-variant font-medium mt-1">
                 — Pemerintah Desa Milangasri
