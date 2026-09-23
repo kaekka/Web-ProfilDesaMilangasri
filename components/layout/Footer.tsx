@@ -82,11 +82,11 @@ export default function Footer() {
                 {/* Copyright Bar */}
                 <div className="mt-12 pt-6 border-t border-primary-container/40 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
                     <span className="text-on-primary-container">
-                        © 2024 Pemerintah Desa Milangasri, Panekan, Magetan. Seluruh hak
+                        © 2026 Pemerintah Desa Milangasri, Panekan, Magetan. Seluruh hak
                         cipta dilindungi.
                     </span>
                     <span className="text-primary-fixed-dim font-medium">
-                        Gotong Royong • Makmur Lestari Lereng Lawu
+                        Membangun Indonesia dari Tepian Desa
                     </span>
                 </div>
             </div>

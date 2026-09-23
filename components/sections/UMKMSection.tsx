@@ -30,7 +30,7 @@ async function getAllUmkm(): Promise<UmkmItem[]> {
       .limit(4);
 
     if (data && data.length > 0) {
-      return data.map((u, i) => ({
+      return data.map((u: any, i: number) => ({
         id: u.id,
         name: u.nama,
         location: u.alamat ?? "Desa Milangasri",

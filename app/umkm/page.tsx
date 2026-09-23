@@ -54,7 +54,6 @@ const KATEGORI_COLORS: Record<string, string> = {
 
 export default async function UmkmPublicPage() {
   const umkmList = await getAllUmkm();
-  const kategoris = [...new Set(umkmList.map((u) => u.kategori).filter(Boolean))];
 
   return (
     <>
@@ -129,23 +128,6 @@ export default async function UmkmPublicPage() {
         {/* UMKM Grid */}
         <section className="w-full bg-surface py-12 md:py-20">
           <div className="max-w-[1200px] mx-auto px-4 md:px-6">
-            {/* Category chips */}
-            {kategoris.length > 0 && (
-              <div className="flex flex-wrap items-center gap-2 mb-10">
-                <span className="px-4 py-2 rounded-full bg-secondary text-white text-sm font-semibold shadow-sm">
-                  Semua UMKM
-                </span>
-                {kategoris.map((kat) => (
-                  <span
-                    key={kat}
-                    className="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-sm font-medium border border-surface-container-high"
-                  >
-                    {kat}
-                  </span>
-                ))}
-              </div>
-            )}
-
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {umkmList.map((umkm) => (
