@@ -5,7 +5,7 @@ const STATS = [
   { icon: "groups", value: "2.124", label: "Keluarga Harmonis" },
   { icon: "cottage", value: "4 RW", label: "Rukun Warga" },
   { icon: "holiday_village", value: "45 RT", label: "Rukun Tetangga" },
-  { icon: "map", value: "492,250 Ha", label: "Luas Wilayah" },
+  { icon: "map", value: "492,2 Ha", label: "Luas Wilayah" },
 ];
 
 export default function HeroSection() {

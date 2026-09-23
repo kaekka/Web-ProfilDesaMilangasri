@@ -191,9 +191,18 @@ export default async function UmkmPublicPage() {
                     )}
 
                     {umkm.deskripsi && (
-                      <p className="text-sm text-on-surface-variant mt-3 leading-relaxed line-clamp-3">
-                        {umkm.deskripsi}
-                      </p>
+                      <div className="text-sm text-on-surface-variant mt-3 leading-relaxed space-y-2">
+                        {umkm.deskripsi.split(/\n\s*\n/).map((block, i) => (
+                          <p key={i} className="text-justify">
+                            {block.split("\n").map((line, j, arr) => (
+                              <span key={j}>
+                                {line}
+                                {j < arr.length - 1 && <br />}
+                              </span>
+                            ))}
+                          </p>
+                        ))}
+                      </div>
                     )}
 
                     {umkm.produk && (

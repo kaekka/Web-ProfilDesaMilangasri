@@ -157,9 +157,14 @@ export default async function BeritaDetailPage({
           {/* Content */}
           {article.content ? (
             <div className="prose prose-lg max-w-none text-on-surface-variant leading-relaxed">
-              {article.content.split("\n\n").map((paragraph, i) => (
+              {article.content.split(/\n\s*\n/).map((block, i) => (
                 <p key={i} className="mb-5 text-justify">
-                  {paragraph}
+                  {block.split("\n").map((line, j, arr) => (
+                    <span key={j}>
+                      {line}
+                      {j < arr.length - 1 && <br />}
+                    </span>
+                  ))}
                 </p>
               ))}
             </div>
