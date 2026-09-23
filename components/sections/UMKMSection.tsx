@@ -98,7 +98,7 @@ export default async function UMKMSection() {
             <Image
               alt="Stan UMKM Produk Hasil Bumi Lokal Desa Milangasri"
               className="w-full h-full object-cover"
-              src="/images/umkm/stan-banner.jpg"
+              src="/images/umkm/Emping-Jagung.jpeg"
               fill
               sizes="(max-width: 768px) 100vw, 320px"
             />
