@@ -42,7 +42,7 @@ export default function GeografiSection() {
               Map Milangasri
             </h2>
             <p className="text-on-surface-variant mt-2 text-base leading-relaxed">
-              Jelajahi batas administratif, persebaran 12 mata air vulkanis,
+              Jelajahi batas administratif, persebaran mata air vulkanis,
               kantor balai desa, serta jalur aksesibilitas mulus dari Magetan
               menuju kawasan ekowisata lereng Gunung Lawu.
             </p>
